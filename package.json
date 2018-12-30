@@ -1,0 +1,58 @@
+{
+    "name": "vamtiger-browser-support",
+    "version": "0.0.0",
+    "description": "Check and optionally add browser support for defined features",
+    "main": "build/vamtiger-browser-support",
+    "scripts": {
+        "build": "tsc",
+        "build-types": "npm run build -- --project tsconfig-declaration.json",
+        "bundle": "npm test && npm run build && npm run bundle-source && npm run clean-bundle",
+        "bundle-node-test": "vamtiger-bundle-typescript --relativePath --entryFilePath source/test/node.ts --bundleFilePath build/test/node.js --format cjs --sourcemap true --copySourceMap --minify",
+        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-browser-support.ts --bundleFilePath build/vamtiger-browser-support.js --format cjs --sourcemap true --copySourceMap --minify --format iife && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-es2015-support.ts --bundleFilePath build/vamtiger-es2015-support.js --format cjs --sourcemap true --copySourceMap --minify --format iife",
+        "clean": "rm -rf build/*",
+        "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger(-\\w+)+-support).(js(.map)?|d.ts)\"",
+        "commit": "npm run bundle && vamtiger-node-typescript-commit --push --publish --buildScript bundle",
+        "mocha": "npm run bundle-node-test && mocha build/test/node --recursive",
+        "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer",
+        "test": "npm run build && npm run mocha",
+        "watch": "npm run bundle -- --watch",
+        "install-source": "npm i --save-dev vamtiger-browser-method@source",
+        "postinstall": "npm run install-source"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
+    },
+    "keywords": [
+        "vamtiger",
+        "browser",
+        "support"
+    ],
+    "author": "Vamtiger Immortalles",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vamtiger-project/vamtiger-browser-support/issues"
+    },
+    "homepage": "https://github.com/vamtiger-project/vamtiger-browser-support#readme",
+    "types": "build/vamtiger-browser-support.d.ts",
+    "dependencies": {},
+    "devDependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.18",
+        "@types/stringify-object": "^3.2.0",
+        "beautify": "0.0.8",
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "stringify-object": "^3.3.0",
+        "typescript": "^3.2.2",
+        "vamtiger-browser-method": "^0.4.0",
+        "vamtiger-bundle-typescript": "0.0.27",
+        "vamtiger-copy-file": "0.0.9",
+        "vamtiger-create-file": "0.0.10",
+        "vamtiger-get-directory-content": "0.0.35",
+        "vamtiger-get-file-text": "0.0.6",
+        "vamtiger-node-typescript-commit": "0.0.65",
+        "vamtiger-remove": "0.0.5"
+    }
+}
