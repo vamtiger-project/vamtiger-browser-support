@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -24,11 +24,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -50,12 +46,12 @@
         "mocha": "^5.2.0",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
-        "vamtiger-bundle-typescript": "0.0.27",
-        "vamtiger-copy-file": "0.0.9",
-        "vamtiger-create-file": "0.0.10",
-        "vamtiger-get-directory-content": "0.0.35",
-        "vamtiger-get-file-text": "0.0.6",
-        "vamtiger-node-typescript-commit": "0.0.65",
-        "vamtiger-remove": "0.0.5"
+        "vamtiger-bundle-typescript": "latest",
+        "vamtiger-copy-file": "latest",
+        "vamtiger-create-file": "latest",
+        "vamtiger-get-directory-content": "latest",
+        "vamtiger-get-file-text": "latest",
+        "vamtiger-node-typescript-commit": "latest",
+        "vamtiger-remove": "latest"
     }
 }
