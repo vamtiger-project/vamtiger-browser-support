@@ -24,13 +24,20 @@ export enum MetaElementAttribute {
     name = 'name',
     url = 'url',
     primary = 'primary',
-    loaded = 'loaded'
+    loaded = 'loaded',
+    supported = 'supported',
+    unsupported = 'unsupported',
+    error = 'error',
+    polyfill = 'polyfill',
+    loadCritical = 'loadCritical',
+    load = 'load'
 }
 
 export enum MetaElementBrowserSupportAttribute {
     es2015Support = 'data-es2015-support',
     elementQuerySupport = 'data-element-query-support',
-    webComponentSupport = 'data-web-component-support'
+    webComponentSupport = 'data-web-component-support',
+    fetchSupport = 'data-fetch-support'
 }
 
 export enum Selector {
@@ -45,7 +52,21 @@ export enum NpmScript {
     bundleSource = 'bundle-source'
 }
 
+export enum SupportType {
+    primary = 'primary',
+    secondary = 'secondary'
+}
+
+export enum LoadOnComplete {
+    loadCritical = 'loadCritical',
+    load = 'load'
+}
+
+export type LoadOnCompleteType  = keyof typeof LoadOnComplete;
+
 export type Support = keyof typeof MetaElementBrowserSupportAttribute;
+
+export type SupportTypeKey = keyof typeof SupportType;
 
 export type StringObject = {[key: string]: string};
 
@@ -60,8 +81,17 @@ export interface ISetBrowserSupportMetaElement {
 
 export interface IUpdateBrowserSupport {
     supportFile: string;
-    result?: boolean;
+    supported?: boolean;
+    polyfill?: string;
     error?: string;
+}
+
+export interface IGetSupportUrls {
+    supportType: SupportType;
+}
+
+export interface ILoadNextSupport {
+    supportType: SupportType;
 }
 
 export type VamtigerSupport =  {
@@ -75,8 +105,10 @@ declare global {
     }
 }
 
+export const supportTypes = Object.keys(SupportType) as SupportType[];
+
 export const regex = {
     leadingData: /^data/,
-    trailingSupport: /support$/i,
+    trailingSupport: /(.*?Support)(Primary)?$/,
     supportScript: /vamtiger(-\w+)+-support/
 }

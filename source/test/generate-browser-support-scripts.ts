@@ -56,7 +56,7 @@ async function test() {
 
 function getBundleSourceScript(supportScript: string) {
     const { base: sourceFile, name: fileName, ext: sourceExtension } = parse(supportScript);
-    const currentBundleSourceScript = `vamtiger-bundle-typescript --relativePath --entryFilePath source/${sourceFile} --bundleFilePath build/${fileName}${jsExtension} --format cjs --sourcemap true --copySourceMap --minify --format iife`;
+    const currentBundleSourceScript = `vamtiger-bundle-typescript --relativePath --entryFilePath source/${sourceFile} --bundleFilePath build/${fileName}${jsExtension} --format iife --sourcemap true --copySourceMap --minify`;
 
     return currentBundleSourceScript;
 }

@@ -29,8 +29,6 @@ export default function () {
 
     vamtigerBrowserSupportScript && Object.assign(metaElement.dataset,vamtigerBrowserSupportScript.dataset);
 
-    metaElement.dataset.es2015Support = nothing;
-
     metaElement.dataset[baseUrl] = baseUrlPath;
 
     head.insertBefore(metaElement, firstChild);

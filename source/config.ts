@@ -3,7 +3,10 @@ import {
     Support ,
     StringConstant,
     StringObject,
-    regex
+    regex,
+    SupportType,
+    LoadOnComplete,
+    LoadOnCompleteType
 } from './types';
 
 const { vamtiger, jsExtension } = StringConstant;
@@ -15,6 +18,25 @@ export const primarySupport = new Set<string>([
 ]);
 
 export const supportScript: StringObject = Object.assign({} as StringObject, MetaElementBrowserSupportAttribute);
+
+export const loadSupport = {
+    parallel: new Set([
+        SupportType.primary,
+        SupportType.secondary
+    ]),
+    series: new Set([
+
+    ])
+};
+
+export const supportDone = Array.from(new Set([
+    SupportType.primary,
+    SupportType.secondary
+]));
+
+export const loadOnComplete = Array.from(new Set(
+    Object.keys(LoadOnComplete) as LoadOnCompleteType[]
+))
 
 export const jsonFormatConfig = {
     format: 'json'
