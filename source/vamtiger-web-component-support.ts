@@ -77,7 +77,10 @@ function test() {
         && customElement.dataset.hasOwnProperty('vamtigerWebComponentSupportDisconnectedCallback')
         && customElement.dataset['vamtigerWebComponentSupportOldValue'] === 'old-value'
         && customElement.dataset['vamtigerWebComponentSupportNewValue'] === customElement.dataset['vamtigerWebComponentSupport']
-        && customElement.shadowRoot.children.length === 2;
+        && customElement.shadowRoot.children.length === 2
+        && window.hasOwnProperty('HTMLTemplateElement')
+        && window.hasOwnProperty('HTMLSlotElement')
+        && !!HTMLElement.prototype.attachShadow;
 
     return result;
 }
