@@ -17,9 +17,11 @@ shadowDomTemplate.innerHTML = \`
 </style>
 
 <div class="container">
+    <slot name="test-slot-1"></slot>
     <span>
             VAMTIGER Browser Support
     </span>
+    <slot name="test-slot-2"></slot>
 </div>
 \`
 
@@ -64,6 +66,19 @@ function test() {
     const customElement = document.createElement(supportFile);
 
     let result = false;
+
+    customElement.innerHTML = `
+        <span slot="test-slot-1">
+            Test Slot 1
+        </span>
+        <span>
+            No slot defined
+        </span>
+
+        <span slot="test-slot-2">
+            Test Slot 2
+        </span>
+    `;
 
     customElement.dataset['vamtigerWebComponentSupport'] = 'old-value';
 
