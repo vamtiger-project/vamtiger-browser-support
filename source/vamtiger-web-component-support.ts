@@ -1,5 +1,6 @@
 import { IUpdateBrowserSupport } from './types';
 import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
+import pause from '../node_modules/vamtiger-browser-method/source/pause';
 
 const { VamtigerBrowserSupport } = window;
 const supportFile = 'vamtiger-web-component-support';
@@ -111,6 +112,10 @@ try {
 
 if (!params.supported) {
     params.polyfill = polyfill;
-}
 
-VamtigerBrowserSupport(params);
+    loadScript({ src: params.polyfill})
+        .then(() => pause({ milliseconds: 4000 }))
+        .then(() => VamtigerBrowserSupport(params));
+} else {
+    VamtigerBrowserSupport(params);
+}
