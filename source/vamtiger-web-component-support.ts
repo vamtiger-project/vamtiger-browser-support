@@ -124,5 +124,5 @@ if (params.polyfill) {
 function loadPolyfill() {
     document.removeEventListener('WebComponentsReady', loadPolyfill);
 
-    setTimeout(() => VamtigerBrowserSupport(params), 2000);
+    VamtigerBrowserSupport(params);
 }
