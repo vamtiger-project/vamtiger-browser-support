@@ -1,4 +1,5 @@
 import { IUpdateBrowserSupport } from './types';
+import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
 
 const { VamtigerBrowserSupport } = window;
 const supportFile = 'vamtiger-web-component-support';
@@ -30,10 +31,10 @@ class VamtigerWebComponentSupport extends HTMLElement {
         const observedAttributes = [
             'data-${supportFile}'
         ];
-        
+
         return observedAttributes;
     }
-    
+
     constructor() {
         super();
         const template = shadowDomTemplate.content.cloneNode(true);
@@ -102,7 +103,7 @@ function test() {
 
 try {
     eval(webComponent);
-    
+
     params.supported = test();
 } catch(error) {
     params.error = error;
@@ -112,4 +113,16 @@ if (!params.supported) {
     params.polyfill = polyfill;
 }
 
-VamtigerBrowserSupport(params);
+if (params.polyfill) {
+    document.addEventListener('WebComponentsReady', loadPolyfill);
+
+    loadScript({ src: polyfill });
+} else {
+    VamtigerBrowserSupport(params);
+}
+
+function loadPolyfill() {
+    document.removeEventListener('WebComponentsReady', loadPolyfill);
+
+    setTimeout(() => VamtigerBrowserSupport(params), 2000);
+}
