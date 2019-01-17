@@ -114,7 +114,7 @@ if (!params.supported) {
     params.polyfill = polyfill;
 
     loadScript({ src: params.polyfill})
-        .then(() => pause({ milliseconds: 4000 }))
+        .then(() => console.log({'window.customElements.define': window.customElements.define}))
         .then(() => VamtigerBrowserSupport(params));
 } else {
     VamtigerBrowserSupport(params);
