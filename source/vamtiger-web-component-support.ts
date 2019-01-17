@@ -3,7 +3,7 @@ import loadScript from '../node_modules/vamtiger-browser-method/source/load-scri
 
 const { VamtigerBrowserSupport } = window;
 const supportFile = 'vamtiger-web-component-support';
-const polyfill = 'https://unpkg.com/@webcomponents/webcomponentsjs@2.2.1/webcomponents-bundle.js';
+const polyfill = 'https://unpkg.com/@webcomponents/webcomponentsjs';
 const params = {
     supportFile
 } as IUpdateBrowserSupport;
@@ -113,16 +113,4 @@ if (!params.supported) {
     params.polyfill = polyfill;
 }
 
-if (params.polyfill) {
-    document.addEventListener('WebComponentsReady', loadPolyfill);
-
-    loadScript({ src: polyfill });
-} else {
-    VamtigerBrowserSupport(params);
-}
-
-function loadPolyfill() {
-    document.removeEventListener('WebComponentsReady', loadPolyfill);
-
-    VamtigerBrowserSupport(params);
-}
+VamtigerBrowserSupport(params);
