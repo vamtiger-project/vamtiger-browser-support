@@ -1,6 +1,6 @@
 import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
-import { 
-    IUpdateBrowserSupport, 
+import {
+    IUpdateBrowserSupport,
     ElementId,
     StringConstant,
     SupportType,
@@ -32,12 +32,11 @@ export default async function updateBrowserSupport({ supportFile, supported, pol
     if (polyfill) {
         data.polyfill = polyfill;
 
-        await loadScript({
-            src: polyfill
-        });
+        loadScript({ src: polyfill })
+            .then(() => loadNextSupport({ supportType }));
+    } else {
+        loadNextSupport({ supportType });
     }
-
-    loadNextSupport({ supportType });
 }
 
 window.VamtigerBrowserSupport = updateBrowserSupport;
