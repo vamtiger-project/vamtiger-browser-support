@@ -34,13 +34,10 @@ export default async function updateBrowserSupport({ supportFile, supported, pol
     if (polyfill) {
         data.polyfill = polyfill;
 
-        load = loadScript({ src: polyfill })
-            .then(() => loadNextSupport({ supportType }));
-    } else {
-        load = Promise.resolve().then(() => loadNextSupport({ supportType }));
+        await loadScript({ src: polyfill })
     }
 
-    return load;
+    loadNextSupport({ supportType });
 }
 
 window.VamtigerBrowserSupport = updateBrowserSupport;

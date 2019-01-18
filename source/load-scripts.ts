@@ -13,7 +13,7 @@ export default async function () {
     const loadScripts = supportUrls.reduce(
         (loadSupport, src) => loadSupport
             .then(() => loadScript({ src }))
-            .then(script => scripts.push(script) && scripts), 
+            .then(script => scripts.push(script) && scripts),
         Promise.resolve(scripts)
     );
 

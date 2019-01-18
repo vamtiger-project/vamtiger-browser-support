@@ -1,5 +1,5 @@
-import { 
-    MetaElementBrowserSupportAttribute, 
+import {
+    MetaElementBrowserSupportAttribute,
     Support ,
     StringConstant,
     StringObject,
@@ -10,7 +10,7 @@ import {
 } from './types';
 
 const { vamtiger, jsExtension } = StringConstant;
-const { leadingData } = regex; 
+const { leadingData } = regex;
 const supportKeys = Object.keys(MetaElementBrowserSupportAttribute) as Support[];
 
 export const primarySupport = new Set<string>([

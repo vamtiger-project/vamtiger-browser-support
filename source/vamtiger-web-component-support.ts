@@ -113,9 +113,6 @@ try {
 if (!params.supported) {
     params.polyfill = polyfill;
 
-    loadScript({ src: params.polyfill})
-        .then(() => console.log({'window.customElements.define': window.customElements.define}))
-        .then(() => VamtigerBrowserSupport(params));
-} else {
-    VamtigerBrowserSupport(params);
 }
+
+VamtigerBrowserSupport(params);
