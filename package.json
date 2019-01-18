@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.13.0",
+    "version": "0.14.0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -24,7 +24,11 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": ["vamtiger", "browser", "support"],
+    "keywords": [
+        "vamtiger",
+        "browser",
+        "support"
+    ],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
