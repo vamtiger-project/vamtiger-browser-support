@@ -19,8 +19,6 @@ export default async function updateBrowserSupport({ supportFile, supported, pol
     const { dataset: data } = metaElement
     const supportType = supportTypes.find(supportType => data.hasOwnProperty(supportType)) as SupportType;
 
-    let load;
-
     if (supported) {
         data.supported = nothing;
     } else {
@@ -34,10 +32,11 @@ export default async function updateBrowserSupport({ supportFile, supported, pol
     if (polyfill) {
         data.polyfill = polyfill;
 
-        await loadScript({ src: polyfill })
+        loadScript({ src: polyfill })
+            .then(() => loadNextSupport({ supportType }))
+    } else {
+        loadNextSupport({ supportType });
     }
-
-    loadNextSupport({ supportType });
 }
 
 window.VamtigerBrowserSupport = updateBrowserSupport;

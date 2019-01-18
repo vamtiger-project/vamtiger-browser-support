@@ -112,7 +112,6 @@ try {
 
 if (!params.supported) {
     params.polyfill = polyfill;
-
 }
 
 VamtigerBrowserSupport(params);
