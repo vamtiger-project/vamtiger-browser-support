@@ -1,5 +1,6 @@
 import {
     MetaElementBrowserSupportAttribute,
+    MetaElementAttribute,
     Support ,
     StringConstant,
     StringObject,
@@ -30,8 +31,8 @@ export const loadSupport = {
 };
 
 export const supportDone = Array.from(new Set([
-    SupportType.primary,
-    SupportType.secondary
+    MetaElementAttribute.supported,
+    MetaElementAttribute.unsupported
 ]));
 
 export const loadOnComplete = Array.from(new Set(

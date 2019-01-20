@@ -7,6 +7,7 @@ import loadScripts from './load-scripts';
 const { parallel } = loadSupport;
 
 let index = 0;
+let done = false;
 
 export default async function () {
     const supportType = supportTypes[index];
@@ -24,15 +25,13 @@ export default async function () {
                 .then(script => supportScripts.push(script) && supportScripts),
             Promise.resolve(supportScripts)
         );
+    } else if (!supportType && !done) {
+        done = true;
+
+        scripts = loadScripts();
     }
 
-    if (supportType === SupportType.secondary) {
-        scripts = scripts.then(
-            secondaryScripts => loadScripts().then(tertiaryScripts => secondaryScripts.concat(tertiaryScripts))
-        );
-    }
-
-    ++index;
+    index++;
 
     return scripts;
 }
