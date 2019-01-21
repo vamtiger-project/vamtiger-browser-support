@@ -1,6 +1,4 @@
 import { IUpdateBrowserSupport } from './types';
-import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
-import pause from '../node_modules/vamtiger-browser-method/source/pause';
 
 const { VamtigerBrowserSupport } = window;
 const supportFile = 'vamtiger-web-component-support';
@@ -112,28 +110,6 @@ try {
 
 if (!params.supported) {
     params.polyfill = polyfill;
-
-    addEventListener('WebComponentsReady', handleWebcomponentsReady);
-
-    loadScript({ src: polyfill })
-        .catch(handleLoadError);
-} else {
-    VamtigerBrowserSupport(params);
 }
 
-function handleWebcomponentsReady(event: CustomEvent) {
-    removeEventListener('WebComponentsReady', handleWebcomponentsReady);
-
-    delete params.polyfill;
-
-    VamtigerBrowserSupport(params);
-}
-
-function handleLoadError(error: Error) {
-    params.error = JSON.stringify([
-        params.error,
-        error.message
-    ]);
-
-    VamtigerBrowserSupport(params);
-}
+VamtigerBrowserSupport(params);
