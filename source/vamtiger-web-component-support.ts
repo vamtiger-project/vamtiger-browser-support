@@ -1,9 +1,9 @@
 import { IUpdateBrowserSupport, Selector } from './types';
-import getOrigin from './get-origin';
+import getRootPath from './get-root-path';
 
-const origin = getOrigin();
+const rootPath = getRootPath();
 export const supportFile = 'vamtiger-web-component-support';
-export const polyfill = `${origin}/build/vamtiger-web-component-polyfill.js`;
+export const polyfill = `${rootPath}/vamtiger-web-component-polyfill.js`;
 
 const { VamtigerBrowserSupport } = window;
 const params = {
