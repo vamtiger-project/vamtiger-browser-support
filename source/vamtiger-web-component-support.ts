@@ -3,7 +3,7 @@ import getOrigin from './get-origin';
 
 const origin = getOrigin();
 export const supportFile = 'vamtiger-web-component-support';
-export const polyfill = `${origin}/vamtiger-web-component-polyfill.js`;
+export const polyfill = `${origin}/build/vamtiger-web-component-polyfill.js`;
 
 const { VamtigerBrowserSupport } = window;
 const params = {
