@@ -1,10 +1,14 @@
-import { IUpdateBrowserSupport } from './types';
+import { IUpdateBrowserSupport, Selector } from './types';
+import getOrigin from './get-origin';
+
+const origin = getOrigin();
+export const supportFile = 'vamtiger-web-component-support';
+export const polyfill = `${origin}/vamtiger-web-component-polyfill.js`;
 
 const { VamtigerBrowserSupport } = window;
-const supportFile = 'vamtiger-web-component-support';
-const polyfill = 'https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-bundle.js';
 const params = {
-    supportFile
+    supportFile,
+    wait: true
 } as IUpdateBrowserSupport;
 const webComponent = `
 const shadowDomTemplate = document.createElement('template');

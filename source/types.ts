@@ -30,7 +30,8 @@ export enum MetaElementAttribute {
     error = 'error',
     polyfill = 'polyfill',
     loadCritical = 'loadCritical',
-    load = 'load'
+    load = 'load',
+    wait = 'wait'
 }
 
 export enum MetaElementBrowserSupportAttribute {
@@ -83,6 +84,7 @@ export interface IUpdateBrowserSupport {
     supportFile: string;
     supported?: boolean;
     polyfill?: string;
+    wait?: boolean;
     error?: string;
 }
 
@@ -110,5 +112,5 @@ export const supportTypes = Object.keys(SupportType) as SupportType[];
 export const regex = {
     leadingData: /^data/,
     trailingSupport: /(.*?Support)(Primary)?$/,
-    supportScript: /vamtiger(-\w+)+-support/
+    supportScript: /vamtiger(-\w+)+-(support|polyfill)/
 }
