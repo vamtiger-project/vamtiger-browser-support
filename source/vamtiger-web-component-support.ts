@@ -7,8 +7,7 @@ export const polyfill = `${rootPath}/vamtiger-web-component-polyfill.js`;
 
 const { VamtigerBrowserSupport } = window;
 const params = {
-    supportFile,
-    wait: true
+    supportFile
 } as IUpdateBrowserSupport;
 const webComponent = `
 const shadowDomTemplate = document.createElement('template');
@@ -114,6 +113,7 @@ try {
 
 if (!params.supported) {
     params.polyfill = polyfill;
+    params.wait = true;
 }
 
 VamtigerBrowserSupport(params);
