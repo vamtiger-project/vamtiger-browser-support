@@ -1,9 +1,26 @@
+import * as AWS from 'aws-sdk';
+
 export enum StringConstant {
     nothing = '',
     vamtiger = 'vamtiger',
     slash = '/',
     jsExtension = '.js',
-    bashAnd = '&&'
+    bashAnd = '&&',
+    arn = 'arn',
+    sns = 'sns',
+    aws = 'aws',
+    colon = ':',
+    hyphen = '-',
+    'vamtiger-contact' = 'vamtiger-contact',
+    '5e5164d3' = '5e5164d3',
+    cc71 = 'cc71',
+    '4e5b' = '4e5b',
+    '9c34' = '9c34',
+    '042fe735f31c' = '042fe735f31c'
+}
+
+export enum Region {
+    usWest2= 'us-west-2'
 }
 
 export enum ElmentName {
@@ -38,7 +55,9 @@ export enum MetaElementBrowserSupportAttribute {
     es2015Support = 'data-es2015-support',
     elementQuerySupport = 'data-element-query-support',
     webComponentSupport = 'data-web-component-support',
-    fetchSupport = 'data-fetch-support'
+    fetchSupport = 'data-fetch-support',
+    awsSupport = 'data-aws-support',
+    contactSupport = 'data-contact-support'
 }
 
 export enum Selector {
@@ -77,15 +96,21 @@ export type VamtigerSupportFile = 'vamtiger-es2015-support';
 
 export interface ISetBrowserSupportMetaElement {
     support: Support;
-    primary?: boolean
+    primary?: boolean;
 }
 
 export interface IUpdateBrowserSupport {
     supportFile: string;
     supported?: boolean;
     polyfill?: string;
+    polyfills?: string[];
+    chain?: boolean;
     wait?: boolean;
     error?: string;
+}
+
+export interface IUpdateBrowserSupportLoadScripts {
+    polyfills: string[];
 }
 
 export interface IGetSupportUrls {
@@ -96,6 +121,12 @@ export interface ILoadNextSupport {
     supportType: SupportType;
 }
 
+export interface IVamtigerContactParams {
+    template: string;
+    subject: string;
+    origin: string;
+}
+
 export type VamtigerSupport =  {
     [K in VamtigerSupportFile]?: IUpdateBrowserSupport;
 }
@@ -104,6 +135,9 @@ declare global {
     interface Window extends VamtigerSupport {
         [ElementId.vamtigerBrowserSupport]: HTMLMetaElement,
         VamtigerBrowserSupport: (params: IUpdateBrowserSupport) => void;
+        VamtigerContact: (params: IVamtigerContactParams) => Promise<AWS.SNS.PublishResponse>;
+        _VamtigerContact_: (params: any) => void;
+        AWS: typeof AWS;
     }
 }
 
@@ -114,3 +148,7 @@ export const regex = {
     trailingSupport: /(.*?Support)(Primary)?$/,
     supportScript: /vamtiger(-\w+)+-(support|polyfill)/
 }
+
+export const stringConstant = Object.assign(StringConstant, {
+    365080655670: 365080655670
+});

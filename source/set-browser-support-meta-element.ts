@@ -14,7 +14,7 @@ const { slash, nothing } = StringConstant;
 const { meta } = ElmentName;
 const { trailingSupport } = regex;
 
-export default function ({ support: supportDataKey, primary }: ISetBrowserSupportMetaElement) {
+export default function ({ support: supportDataKey }: ISetBrowserSupportMetaElement) {
     const { [vamtigerBrowserSupportId]: vamtigerBrowserSupport } = window;
     const { dataset } = vamtigerBrowserSupport;
     const { baseUrl } = dataset;

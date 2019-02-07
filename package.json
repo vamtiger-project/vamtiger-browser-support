@@ -9,7 +9,7 @@
         "bundle": "npm test && npm run build && npm run bundle-browser-test && npm run bundle-source && npm run clean-bundle",
         "bundle-browser-test": "vamtiger-bundle-typescript --relativePath --entryFilePath source/test/browser.ts --bundleFilePath build/test/browser.js --format iife --sourcemap true --copySourceMap --minify",
         "bundle-node-test": "vamtiger-bundle-typescript --relativePath --entryFilePath source/test/node.ts --bundleFilePath build/test/node.js --format cjs --sourcemap true --copySourceMap --minify",
-        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-browser-support.ts --bundleFilePath build/vamtiger-browser-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-element-query-support.ts --bundleFilePath build/vamtiger-element-query-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-es2015-support.ts --bundleFilePath build/vamtiger-es2015-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-fetch-support.ts --bundleFilePath build/vamtiger-fetch-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-web-component-polyfill.ts --bundleFilePath build/vamtiger-web-component-polyfill.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-web-component-support.ts --bundleFilePath build/vamtiger-web-component-support.js --format iife --sourcemap true --copySourceMap --minify",
+        "bundle-source": "vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-aws-support.ts --bundleFilePath build/vamtiger-aws-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-browser-support.ts --bundleFilePath build/vamtiger-browser-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-contact-polyfill-support.ts --bundleFilePath build/vamtiger-contact-polyfill-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-contact-polyfill.ts --bundleFilePath build/vamtiger-contact-polyfill.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-contact-support.ts --bundleFilePath build/vamtiger-contact-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-element-query-support.ts --bundleFilePath build/vamtiger-element-query-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-es2015-support.ts --bundleFilePath build/vamtiger-es2015-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-fetch-support.ts --bundleFilePath build/vamtiger-fetch-support.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-web-component-polyfill.ts --bundleFilePath build/vamtiger-web-component-polyfill.js --format iife --sourcemap true --copySourceMap --minify && vamtiger-bundle-typescript --relativePath --entryFilePath source/vamtiger-web-component-support.ts --bundleFilePath build/vamtiger-web-component-support.js --format iife --sourcemap true --copySourceMap --minify",
         "clean": "rm -rf build/*",
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger(-\\w+)+-(support|polyfill)).(js(.map)?|d.ts)\"",
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
@@ -24,11 +24,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -37,11 +33,12 @@
     "homepage": "https://github.com/vamtiger-project/vamtiger-browser-support#readme",
     "types": "build/vamtiger-browser-support.d.ts",
     "dependencies": {
-        "vamtiger-browser-method": "source",
+        "aws-sdk": "^2.397.0",
         "vamtiger-watch": "^1.3.1",
         "whatwg-fetch": "^3.0.0"
     },
     "devDependencies": {
+        "@types/aws-sdk": "^2.7.0",
         "@types/chai": "^4.1.7",
         "@types/mocha": "^5.2.5",
         "@types/node": "^10.12.18",
@@ -51,6 +48,7 @@
         "mocha": "^5.2.0",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
+        "vamtiger-browser-method": "^0.25.0",
         "vamtiger-bundle-typescript": "latest",
         "vamtiger-copy-file": "latest",
         "vamtiger-create-file": "latest",
