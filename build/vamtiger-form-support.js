@@ -1,0 +1,2 @@
+!function(){"use strict";window.VamtigerForm||(window.VamtigerForm=function(n){n.form;var t,e,o,i,r=n.field;return t=this,e=void 0,i=function(){return __generator(this,function(n){return r.selector,r.value,r.name,[2,{}]})},new((o=void 0)||(o=Promise))(function(n,r){function u(n){try{a(i.next(n))}catch(n){r(n)}}function c(n){try{a(i.throw(n))}catch(n){r(n)}}function a(t){t.done?n(t.value):new o(function(n){n(t.value)}).then(u,c)}a((i=i.apply(t,e)).next())})})}();
+//# sourceMappingURL=vamtiger-form-support.js.map
