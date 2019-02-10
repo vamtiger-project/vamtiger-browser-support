@@ -3,6 +3,7 @@ import { supportTypes, SupportType } from './types';
 import { loadSupport } from './config';
 import getSupportUrls from './get-support-urls';
 import loadScripts from './load-scripts';
+import loadNextSupport from './load-next-support';
 
 const { parallel } = loadSupport;
 
@@ -17,7 +18,11 @@ export default async function () {
     let scripts: Promise<typeof supportScripts>;
 
     if (parallel.has(supportType)) {
-        scripts = Promise.all(supportUrls.map(src => loadScript({ src })))
+        scripts = Promise.all(supportUrls.map(src => loadScript({ src })));
+
+        if (!supportUrls.length) {
+            loadNextSupport({ supportType });
+        }
     } else if (supportType) {
         scripts = supportUrls.reduce(
             (loadSupport, src) => loadSupport

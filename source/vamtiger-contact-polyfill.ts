@@ -1,7 +1,7 @@
-import { IVamtigerContactParams } from './types';
+import { IVamtigerContactParams, VamtigerContactResolve, VamtigerContactReject } from './types';
 import { vc } from './config';
 
-const { AWS, _VamtigerContact_: gvc } = window;
+const { AWS, _VamtigerContact_: gvc, VamtigerContact } = window;
 const { config, SNS, CognitoIdentityCredentials: Credentials } = AWS;
 const { origin, href } = location;
 const { stringify } = JSON;
@@ -11,12 +11,11 @@ const region = y;
 const credentials = new Credentials({
     IdentityPoolId: x
 });
+const sns = new SNS();
 
 Object.assign(config, { region, credentials });
 
-const sns = new SNS();
-
-window.VamtigerContact = ({ subject, template }: IVamtigerContactParams) => new Promise((resolve, reject) => {
+function vamtigerContact({ subject, template }: IVamtigerContactParams, resolve: VamtigerContactResolve, reject: VamtigerContactReject) {
     const Message = stringify({
         subject,
         template,
@@ -29,4 +28,8 @@ window.VamtigerContact = ({ subject, template }: IVamtigerContactParams) => new 
     };
 
     sns.publish(params, (error, response) => error ? reject(error) : resolve(response));
-});
+}
+
+if (!VamtigerContact) {
+    window.VamtigerContact = (params) => new Promise((resolve, reject) => vamtigerContact(params, resolve, reject));
+}

@@ -65,7 +65,9 @@ export enum Selector {
 }
 
 export enum ErrorMessage {
-    notBrowser = 'This is not a web browser'
+    notBrowser = 'This is not a web browser',
+    noFormForSelector = 'No Form for Selector',
+    noFieldInFormForSelector = 'No Field in Form for Selector'
 }
 
 export enum NpmScript {
@@ -82,6 +84,10 @@ export enum LoadOnComplete {
     load = 'load'
 }
 
+export enum VamtigerFormDataSupportFormFieldValue {
+    innerHTML = 'innerHTML'
+}
+
 export type LoadOnCompleteType  = keyof typeof LoadOnComplete;
 
 export type Support = keyof typeof MetaElementBrowserSupportAttribute;
@@ -94,6 +100,16 @@ export type AnyObject = {[key: string]: any};
 
 export type VamtigerSupportFile = 'vamtiger-es2015-support';
 
+export type VamtigerFormDataSupportFormFieldValueKey = keyof typeof VamtigerFormDataSupportFormFieldValue;
+
+export type VamtigerSupport =  {
+    [K in VamtigerSupportFile]?: IUpdateBrowserSupport;
+}
+
+export type VamtigerContactResolve = (response: AWS.SNS.PublishResponse) => void;
+
+export type VamtigerContactReject = (error: AWS.AWSError) => void;
+
 export interface ISetBrowserSupportMetaElement {
     support: Support;
     primary?: boolean;
@@ -104,13 +120,13 @@ export interface IUpdateBrowserSupport {
     supported?: boolean;
     polyfill?: string;
     polyfills?: string[];
-    chain?: boolean;
+    polyfillChain?: string[][]
     wait?: boolean;
     error?: string;
 }
 
 export interface IUpdateBrowserSupportLoadScripts {
-    polyfills: string[];
+    polyfills: IUpdateBrowserSupport['polyfills'];
 }
 
 export interface IGetSupportUrls {
@@ -127,8 +143,15 @@ export interface IVamtigerContactParams {
     origin: string;
 }
 
-export type VamtigerSupport =  {
-    [K in VamtigerSupportFile]?: IUpdateBrowserSupport;
+export interface IVamtigerFormSupport {
+    form: string;
+    field?: IVamtigerFormSupportFormField;
+}
+
+export interface IVamtigerFormSupportFormField {
+    selector: string;
+    name: string;
+    value?: VamtigerFormDataSupportFormFieldValueKey;
 }
 
 declare global {
@@ -137,6 +160,7 @@ declare global {
         VamtigerBrowserSupport: (params: IUpdateBrowserSupport) => void;
         VamtigerContact: (params: IVamtigerContactParams) => Promise<AWS.SNS.PublishResponse>;
         _VamtigerContact_: (params: any) => void;
+        VamtigerForm: (params: IVamtigerFormSupport) => Promise<AnyObject>;
         AWS: typeof AWS;
     }
 }

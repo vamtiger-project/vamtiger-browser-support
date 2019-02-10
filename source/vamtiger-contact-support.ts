@@ -4,10 +4,12 @@ import { IUpdateBrowserSupport } from './types';
 const { VamtigerContact, VamtigerBrowserSupport } = window;
 const rootPath = getRootPath();
 export const supportFile = 'vamtiger-contact-support';
-export const polyfills = [
-    'https://unpkg.com/aws-sdk@latest/dist/aws-sdk.min.js',
-    `${rootPath}/vamtiger-contact-polyfill-support.js`,
-    `${rootPath}/vamtiger-contact-polyfill.js`
+export const polyfillChain = [
+    [
+        'https://unpkg.com/aws-sdk@latest/dist/aws-sdk.min.js',
+        `${rootPath}/vamtiger-contact-polyfill-support.js`
+    ],
+    [`${rootPath}/vamtiger-contact-polyfill.js`]
 ];
 const params = {
     supportFile,
@@ -16,7 +18,7 @@ const params = {
 } as IUpdateBrowserSupport;
 
 if (!params.supported) {
-    params.polyfills = polyfills;
+    params.polyfillChain = polyfillChain;
 }
 
 VamtigerBrowserSupport(params);
