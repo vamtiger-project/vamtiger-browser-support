@@ -11,11 +11,10 @@ const region = y;
 const credentials = new Credentials({
     IdentityPoolId: x
 });
-const sns = new SNS();
 
 Object.assign(config, { region, credentials });
-console.log({ region, credentials });
-console.log(config);
+
+const sns = new SNS();
 
 function vamtigerContact({ subject, template }: IVamtigerContactParams, resolve: VamtigerContactResolve, reject: VamtigerContactReject) {
     const Message = stringify({
