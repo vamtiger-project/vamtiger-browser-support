@@ -14,6 +14,8 @@ const credentials = new Credentials({
 const sns = new SNS();
 
 Object.assign(config, { region, credentials });
+console.log({ region, credentials });
+console.log(config);
 
 function vamtigerContact({ subject, template }: IVamtigerContactParams, resolve: VamtigerContactResolve, reject: VamtigerContactReject) {
     const Message = stringify({
