@@ -15,7 +15,7 @@ const { baseUrl } = MetaElementAttribute;
 const { es2015Support }  = MetaElementBrowserSupportAttribute;
 const { nothing, slash, build } = StringConstant;
 const { vamtigerBrowserSupportScript: selector } = Selector;
-const { trailingDigit } = regex;
+const { distTag } = regex;
 
 export default function () {
     const { head } = document;
@@ -25,7 +25,7 @@ export default function () {
     const vamtigerBrowserSupportScriptPaths = vamtigerBrowserSupportScript.src.split(slash);
     const baseUrlPaths = new Set(vamtigerBrowserSupportScriptPaths
         .slice(0, vamtigerBrowserSupportScriptPaths.length - 1));
-    const baseUrlPath = vamtigerBrowserSupportScript.src.match(trailingDigit)
+    const baseUrlPath = vamtigerBrowserSupportScript.src.match(distTag)
         && `${vamtigerBrowserSupportScript.src}/build`
         || Array.from(baseUrlPaths).join(slash);
 

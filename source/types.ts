@@ -181,7 +181,7 @@ export const regex = {
     leadingData: /^data/,
     trailingSupport: /(.*?Support)(Primary)?$/,
     supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
-    trailingDigit: /\d$/
+    distTag: /(\d|latest)$/
 }
 
 export const stringConstant = Object.assign(StringConstant, {
