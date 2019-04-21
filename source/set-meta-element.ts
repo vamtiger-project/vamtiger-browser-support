@@ -29,10 +29,6 @@ export default function () {
         && `${vamtigerBrowserSupportScript.src}/build`
         || Array.from(baseUrlPaths).join(slash);
 
-    console.log(vamtigerBrowserSupportScript.src);
-    console.log(baseUrlPaths);
-    console.log(baseUrlPath);
-
     metaElement.setAttribute(id, vamtigerBrowserSupport);
 
     vamtigerBrowserSupportScript && Object.assign(metaElement.dataset,vamtigerBrowserSupportScript.dataset);
