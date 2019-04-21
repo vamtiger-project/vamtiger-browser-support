@@ -1,7 +1,7 @@
-import { 
-    ElementId, 
-    ElmentName, 
-    ElementAttribute, 
+import {
+    ElementId,
+    ElmentName,
+    ElementAttribute,
     MetaElementAttribute,
     MetaElementBrowserSupportAttribute,
     StringConstant,
@@ -29,7 +29,7 @@ export default function () {
 
     vamtigerBrowserSupportScript && Object.assign(metaElement.dataset,vamtigerBrowserSupportScript.dataset);
 
-    metaElement.dataset[baseUrl] = baseUrlPath;
+    metaElement.dataset[baseUrl] = `${baseUrlPath}/build`;
 
     head.insertBefore(metaElement, firstChild);
 }
