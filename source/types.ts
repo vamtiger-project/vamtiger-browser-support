@@ -3,6 +3,7 @@ import * as AWS from 'aws-sdk';
 
 export enum StringConstant {
     nothing = '',
+    build = 'build',
     vamtiger = 'vamtiger',
     slash = '/',
     jsExtension = '.js',
@@ -179,7 +180,8 @@ export const supportTypes = Object.keys(SupportType) as SupportType[];
 export const regex = {
     leadingData: /^data/,
     trailingSupport: /(.*?Support)(Primary)?$/,
-    supportScript: /vamtiger(-\w+)+-(support|polyfill)/
+    supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
+    trailingDigit: /\d$/
 }
 
 export const stringConstant = Object.assign(StringConstant, {

@@ -5,15 +5,17 @@ import {
     MetaElementAttribute,
     MetaElementBrowserSupportAttribute,
     StringConstant,
-    Selector
+    Selector,
+    regex
 } from './types';
 
 const { id } = ElementAttribute;
 const { vamtigerBrowserSupport } = ElementId;
 const { baseUrl } = MetaElementAttribute;
 const { es2015Support }  = MetaElementBrowserSupportAttribute;
-const { nothing, slash } = StringConstant;
+const { nothing, slash, build } = StringConstant;
 const { vamtigerBrowserSupportScript: selector } = Selector;
+const { trailingDigit } = regex;
 
 export default function () {
     const { head } = document;
@@ -21,15 +23,21 @@ export default function () {
     const metaElement = document.createElement(ElmentName.meta);
     const vamtigerBrowserSupportScript = document.querySelector(selector) as HTMLScriptElement;
     const vamtigerBrowserSupportScriptPaths = vamtigerBrowserSupportScript.src.split(slash);
-    const baseUrlPath = vamtigerBrowserSupportScriptPaths
-        .slice(0, vamtigerBrowserSupportScriptPaths.length - 1)
-        .join(slash);
+    const baseUrlPaths = new Set(vamtigerBrowserSupportScriptPaths
+        .slice(0, vamtigerBrowserSupportScriptPaths.length - 1));
+    const baseUrlPath = vamtigerBrowserSupportScript.src.match(trailingDigit)
+        && `${vamtigerBrowserSupportScript.src}/build`
+        || Array.from(baseUrlPaths).join(slash);
+
+    console.log(vamtigerBrowserSupportScript.src);
+    console.log(baseUrlPaths);
+    console.log(baseUrlPath);
 
     metaElement.setAttribute(id, vamtigerBrowserSupport);
 
     vamtigerBrowserSupportScript && Object.assign(metaElement.dataset,vamtigerBrowserSupportScript.dataset);
 
-    metaElement.dataset[baseUrl] = `${baseUrlPath}/build`;
+    metaElement.dataset[baseUrl] = baseUrlPath;
 
     head.insertBefore(metaElement, firstChild);
 }
