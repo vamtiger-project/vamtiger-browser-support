@@ -8,7 +8,7 @@ export default async function () {
     return dependencies;
 }
 
-function loadDependency(src: string) {return new Promise((resolve: (script: HTMLScriptElement) => void, reject) => {
+function loadDependency(src: string) {return new Promise((resolve: (script?: HTMLScriptElement) => void, reject) => {
     const { head } = document;
     const selector = `[src="${src}"]`;
     const existingScript = head.querySelector<HTMLScriptElement>(selector);
@@ -21,7 +21,9 @@ function loadDependency(src: string) {return new Promise((resolve: (script: HTML
         script.src = src;
 
         head.appendChild(script);
-    } else {
+    } else if (existingScript) {
         resolve(existingScript);
+    } else {
+        resolve();
     }
 })}
