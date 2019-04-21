@@ -1,8 +1,12 @@
-import { IUpdateBrowserSupport } from './types';
+import {
+    IUpdateBrowserSupport,
+    SupportFile,
+    Polyfill
+} from './types';
 
 const { VamtigerBrowserSupport } = window;
-const supportFile = 'vamtiger-element-query-support';
-const polyfill = 'https://unpkg.com/eqcss/EQCSS.min.js';
+const supportFile = SupportFile.elementQuery;
+const polyfill = Polyfill.elementQuery;
 const params = {
     supportFile
 } as IUpdateBrowserSupport;

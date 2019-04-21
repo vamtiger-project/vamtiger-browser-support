@@ -1,5 +1,4 @@
-import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
-import { supportTypes, SupportType } from './types';
+import { supportTypes } from './types';
 import { loadSupport } from './config';
 import getSupportUrls from './get-support-urls';
 import loadScripts from './load-scripts';
@@ -11,6 +10,8 @@ let index = 0;
 let done = false;
 
 export default async function () {
+    const { VamtigerBrowserMethod } = window;
+    const { loadScript } = VamtigerBrowserMethod;
     const supportType = supportTypes[index];
     const supportUrls = getSupportUrls({ supportType });
     const supportScripts = [] as HTMLScriptElement[];

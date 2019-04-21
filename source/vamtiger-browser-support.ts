@@ -1,18 +1,23 @@
-export * from '../node_modules/vamtiger-browser-method/source/load-ts-lib';
+import * as tslib from '../node_modules/tslib/tslib';
+import { ErrorMessage } from './types';
 export * from './update-browser-support';
 import setMetaElement from './set-meta-element';
 import setBrowserSupportMetaElements from'./set-browser-support-meta-elements';
 import isBrowser from './is-browser';
 import loadSupport from './load-support';
-import { ErrorMessage } from './types';
+import loadDependencies from './load-dependencies';
+
+tslib;
 
 export default function main() {
     return isBrowser()
         .then(() => addEventListener('load', handleLoad));
 }
 
-function handleLoad(event: Event) {
+async function handleLoad(event: Event) {
     removeEventListener('load', handleLoad);
+
+    await loadDependencies();
 
     setMetaElement();
 

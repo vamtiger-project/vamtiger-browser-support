@@ -24,11 +24,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -52,7 +48,7 @@
         "mocha": "^5.2.0",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
-        "vamtiger-browser-method": "^0.29.0",
+        "vamtiger-browser-method": "latest",
         "vamtiger-bundle-typescript": "latest",
         "vamtiger-copy-file": "latest",
         "vamtiger-create-file": "latest",

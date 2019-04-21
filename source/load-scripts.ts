@@ -1,10 +1,11 @@
-import loadScript from 'vamtiger-browser-method/source/load-script';
 import { loadOnComplete } from './config';
 import { ElementId } from './types';
 
 const { vamtigerBrowserSupport: vamtigerBrowserSupportId } = ElementId;
 
 export default async function () {
+    const { VamtigerBrowserMethod } = window;
+    const { loadScript } = VamtigerBrowserMethod;
     const { [vamtigerBrowserSupportId]: vamtigerBrowserSupport  } = window;
     const scripts = [] as HTMLScriptElement[];
     const supportUrls = loadOnComplete

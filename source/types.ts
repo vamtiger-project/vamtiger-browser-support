@@ -1,3 +1,4 @@
+import * as VamtigerBrowserMethodTypes from 'vamtiger-browser-method/build/types';
 import * as AWS from 'aws-sdk';
 
 export enum StringConstant {
@@ -86,6 +87,14 @@ export enum LoadOnComplete {
 
 export enum VamtigerFormDataSupportFormFieldValue {
     innerHTML = 'innerHTML'
+}
+
+export enum SupportFile {
+    elementQuery = 'vamtiger-element-query-support'
+}
+
+export enum Polyfill {
+    elementQuery = 'https://unpkg.com/eqcss/EQCSS.min.js'
 }
 
 export type LoadOnCompleteType  = keyof typeof LoadOnComplete;

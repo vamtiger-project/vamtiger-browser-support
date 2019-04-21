@@ -1,6 +1,3 @@
-import loadScript from '../node_modules/vamtiger-browser-method/source/load-script';
-import loadScripts from '../node_modules/vamtiger-browser-method/source/load-scripts';
-import loadScriptsSequentially from '../node_modules/vamtiger-browser-method/source/load-scripts-sequentially';
 import {
     IUpdateBrowserSupport,
     ElementId,
@@ -10,13 +7,21 @@ import {
 } from './types';
 import loadNextSupport from './load-next-support';
 
-const { VamtigerBrowserSupport } = window;
 const { vamtigerBrowserSupport: vamtigerBrowserSupportId } = ElementId;
 const { nothing } = StringConstant;
 const supportTypes = Object.keys(SupportType) as SupportTypeKey[]
 
 export default async function updateBrowserSupport({ supportFile, supported, polyfill, polyfills, polyfillChain, error, wait }: IUpdateBrowserSupport) {
-    const { [vamtigerBrowserSupportId]: vamtigerBrowserSupport  } = window;
+    const {
+        [vamtigerBrowserSupportId]: vamtigerBrowserSupport,
+        VamtigerBrowserSupport,
+        VamtigerBrowserMethod
+    } = window;
+    const {
+        loadScript,
+        loadScripts,
+        loadScriptsSequentially
+    } = VamtigerBrowserMethod;
     const selector = `[data-url*=${supportFile}]`;
     const metaElement = vamtigerBrowserSupport.querySelector(selector) as HTMLMetaElement;
     const { dataset: data } = metaElement
@@ -56,6 +61,6 @@ export default async function updateBrowserSupport({ supportFile, supported, pol
     }
 }
 
-if (!VamtigerBrowserSupport) {
+if (!window.VamtigerBrowserSupport) {
     window.VamtigerBrowserSupport = updateBrowserSupport;
 }
