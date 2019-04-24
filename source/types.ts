@@ -90,6 +90,10 @@ export enum VamtigerFormDataSupportFormFieldValue {
     innerHTML = 'innerHTML'
 }
 
+export enum DocumentDataAttribute {
+    touchSupport = 'vamtigerTouchSupport'
+}
+
 export enum SupportFile {
     elementQuery = 'vamtiger-element-query-support'
 }

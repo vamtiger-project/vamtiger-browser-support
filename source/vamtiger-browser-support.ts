@@ -6,6 +6,7 @@ import setBrowserSupportMetaElements from'./set-browser-support-meta-elements';
 import isBrowser from './is-browser';
 import loadSupport from './load-support';
 import loadDependencies from './load-dependencies';
+import setBrowserData from './set-browser-data';
 
 tslib;
 
@@ -24,6 +25,8 @@ async function handleLoad(event: Event) {
     setBrowserSupportMetaElements();
 
     loadSupport().catch(handleError);
+
+    setBrowserData();
 }
 
 function handleError(error: Error) {
