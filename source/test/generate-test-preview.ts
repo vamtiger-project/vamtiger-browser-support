@@ -33,10 +33,10 @@ describe('Generate Test Preview', function () {
                 console.log();
             }
         }
-        
+
         const test = new Test();
         test.test();
-        
+
         expect(folderContent.has(basename(testHtmlDestination))).to.be.true;
     })
 })

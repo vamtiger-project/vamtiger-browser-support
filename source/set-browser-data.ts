@@ -15,8 +15,6 @@ export default async function () {
         || maxTouchPoints
         || msMaxTouchPoints) ? true : false;
 
-    console.log({ touchSupport });
-
     if (touchSupport) {
         dataset[DocumentDataAttribute.touchSupport] = nothing;
     }
