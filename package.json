@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.35.1",
+    "version": "0.40.0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -13,7 +13,7 @@
         "clean": "rm -rf build/*",
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger(-\\w+)+-(support|polyfill)).(js(.map)?|d.ts)\"",
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
-        "commit": "npm run bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish --publishSource",
+        "commit": "npm run bundle-source && npm run clean-bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish --publishSource",
         "install-source": "npm i --save-dev vamtiger-browser-method@source",
         "mocha": "npm run bundle-node-test && npm run bundle-browser-test && mocha build/test/node --recursive",
         "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer",
@@ -24,11 +24,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -52,7 +48,7 @@
         "mocha": "^5.2.0",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
-        "vamtiger-browser-method": "latest",
+        "vamtiger-browser-method": "^0.86.1",
         "vamtiger-bundle-typescript": "latest",
         "vamtiger-copy-file": "latest",
         "vamtiger-create-file": "latest",
