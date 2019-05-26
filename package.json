@@ -13,7 +13,7 @@
         "clean": "rm -rf build/*",
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger(-\\w+)+-(support|polyfill)).(js(.map)?|d.ts)\"",
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
-        "commit": "npm run bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish --publishSource",
+        "commit": "npm run bundle-source && npm run clean-bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish --publishSource",
         "install-source": "npm i --save-dev vamtiger-browser-method@source",
         "mocha": "npm run bundle-node-test && npm run bundle-browser-test && mocha build/test/node --recursive",
         "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer",
