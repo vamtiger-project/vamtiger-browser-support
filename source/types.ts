@@ -63,7 +63,13 @@ export enum MetaElementBrowserSupportAttribute {
 }
 
 export enum Selector {
-    vamtigerBrowserSupportScript = 'script[src*="vamtiger-browser-support"]'
+    vamtigerBrowserSupportScript = 'script[src*="vamtiger-browser-support"]',
+    vamtigerBrowserMethodJsonJs = '[src$="vamtiger-browser-method.js.json.js"]',
+    vamtigerBrowserMethodJson = '[data-name$="vamtiger-browser-method.js.json"]'
+}
+
+export enum ScriptUrl {
+    vamtigerBrowserMethod = 'https://unpkg.com/vamtiger-browser-method/build/vamtiger-browser-method.js'
 }
 
 export enum ErrorMessage {

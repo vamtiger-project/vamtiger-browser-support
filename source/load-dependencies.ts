@@ -1,9 +1,18 @@
+import { IJsonScriptData } from 'vamtiger-browser-method/build/types';
 import {
-    dependencies as urls
+    Selector,
+    ScriptUrl
+} from './types';
+import {
+    dependencies as urls,
 } from './config';
+
+const { parse } = JSON;
 
 export default async function () {
     const dependencies = await Promise.all(urls.map(loadDependency));
+
+    loanVamtigerBrowserMethod();
 
     return dependencies;
 }
@@ -27,3 +36,20 @@ function loadDependency(src: string) {return new Promise((resolve: (script?: HTM
         resolve();
     }
 })}
+
+function loanVamtigerBrowserMethod() {
+    const { head } = document;
+    const selector = Selector.vamtigerBrowserMethodJson;
+    const script = document.querySelector<HTMLScriptElement>(selector);
+    const jsonText = script && script.innerHTML;
+    const data = jsonText && parse(jsonText) as IJsonScriptData;
+    const js = data && data.text;
+    const vamtigerBrowserMethodScript = document.createElement('script');
+
+    if (js) {
+        vamtigerBrowserMethodScript.dataset.name = ScriptUrl.vamtigerBrowserMethod;
+        vamtigerBrowserMethodScript.innerHTML = js;
+
+        head.appendChild(vamtigerBrowserMethodScript);
+    }
+}
