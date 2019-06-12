@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.40.1",
+    "version": "0.41.0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -16,7 +16,7 @@
         "commit": "npm run bundle-source && npm run clean-bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish --publishSource",
         "install-source": "npm i --save-dev vamtiger-browser-method@source",
         "mocha": "npm run bundle-node-test && npm run bundle-browser-test && mocha build/test/node --recursive",
-        "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer",
+        "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer 8888",
         "test": "npm run build && npm run mocha && npm run bundle-source",
         "watch": "vamtiger-watch --folder source --extension ts --script test"
     },
@@ -24,11 +24,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
