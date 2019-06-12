@@ -10,11 +10,6 @@ import setBrowserData from './set-browser-data';
 
 tslib;
 
-export default function main() {
-    return isBrowser()
-        .then(() => addEventListener('load', handleLoad));
-}
-
 async function handleLoad(event: Event) {
     removeEventListener('load', handleLoad);
 
@@ -36,4 +31,4 @@ function handleError(error: Error) {
 
 const { notBrowser } = ErrorMessage;
 
-main().catch(handleError);
+addEventListener('load', handleLoad);

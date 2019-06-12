@@ -17,7 +17,7 @@ const { leadingData } = regex;
 const supportKeys = Object.keys(MetaElementBrowserSupportAttribute) as Support[];
 
 export const dependencies = [
-    'https://unpkg.com/vamtiger-browser-method/build/vamtiger-browser-method.js.json.js'
+    'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js'
 ];
 
 export const primarySupport = new Set<string>([
