@@ -69,7 +69,8 @@ export enum Selector {
 }
 
 export enum ScriptUrl {
-    vamtigerBrowserMethod = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js'
+    vamtigerBrowserMethod = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js',
+    vamtigerBrowserMethodJsonJs = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js'
 }
 
 export enum ErrorMessage {
@@ -191,7 +192,8 @@ export const regex = {
     leadingData: /^data/,
     trailingSupport: /(.*?Support)(Primary)?$/,
     supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
-    distTag: /(\d|latest)$/
+    distTag: /(\d|latest)$/,
+    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
 }
 
 export const stringConstant = Object.assign(StringConstant, {

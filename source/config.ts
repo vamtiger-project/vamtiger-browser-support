@@ -16,9 +16,7 @@ const { vamtiger, jsExtension } = StringConstant;
 const { leadingData } = regex;
 const supportKeys = Object.keys(MetaElementBrowserSupportAttribute) as Support[];
 
-export const dependencies = [
-    'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js'
-];
+export const dependencies = [] as string[];
 
 export const primarySupport = new Set<string>([
     'es2015Support'

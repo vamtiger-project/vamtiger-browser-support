@@ -5,12 +5,16 @@ import {
     ScriptUrl
 } from './types';
 import {
-    dependencies as urls,
+    dependencies as dependencyUrls,
 } from './config';
+import isBot from './is-bot';
 
 const { parse } = JSON;
 
 export default async function () {
+    const urls = ([isBot() && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs] as string [])
+        .concat(dependencyUrls)
+        .filter(url => url);
     const dependencies = await Promise.all(urls.map(loadDependency));
 
     await loanVamtigerBrowserMethod();
@@ -48,38 +52,11 @@ function loanVamtigerBrowserMethod() {return new Promise(async (resolve, reject)
     const vamtigerBrowserMethodScript = document.createElement('script');
 
     if (js) {
-        try {
-            vamtigerBrowserMethodScript.dataset.name = ScriptUrl.vamtigerBrowserMethod;
-            vamtigerBrowserMethodScript.innerHTML = js;
+        vamtigerBrowserMethodScript.dataset.name = ScriptUrl.vamtigerBrowserMethod;
+        vamtigerBrowserMethodScript.innerHTML = js;
 
-            vamtigerBrowserMethodScript.addEventListener('error', (event) => loadVamtigerBrowserMethodScript(event));
-
-            head.appendChild(vamtigerBrowserMethodScript);
-
-            await loadVamtigerBrowserMethodScript();
-
-            resolve();
-        } catch(error) {
-            console.warn(error);
-
-            await loadVamtigerBrowserMethodScript();
-        }
+        head.appendChild(vamtigerBrowserMethodScript);
     }
-})}
 
-function loadVamtigerBrowserMethodScript(event?: ErrorEvent) {return new Promise((resolve, reject) => {
-    event && event.stopPropagation();
-    const { VamtigerBrowserMethod } = self;
-    const { head } = document;
-    const existingScript = document.querySelector<HTMLScriptElement>(selector.vamtigerBrowserMethod);
-    const script = !VamtigerBrowserMethod && !existingScript && document.createElement('script');
-
-    if (script) {
-        script.addEventListener('load', resolve);
-        script.addEventListener('error', reject);
-
-        head.appendChild(script);
-    } else {
-        resolve();
-    }
+    resolve();
 })}
