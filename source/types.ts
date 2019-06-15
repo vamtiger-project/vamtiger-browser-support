@@ -69,7 +69,7 @@ export enum Selector {
 }
 
 export enum ScriptUrl {
-    vamtigerBrowserMethod = 'https://unpkg.com/vamtiger-browser-method/build/vamtiger-browser-method.js'
+    vamtigerBrowserMethod = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js'
 }
 
 export enum ErrorMessage {
@@ -105,7 +105,7 @@ export enum SupportFile {
 }
 
 export enum Polyfill {
-    elementQuery = 'https://unpkg.com/eqcss/EQCSS.min.js'
+    elementQuery = 'https://cdn.jsdelivr.net/npm/eqcss@latest/EQCSS.min.js'
 }
 
 export type LoadOnCompleteType  = keyof typeof LoadOnComplete;
@@ -197,3 +197,7 @@ export const regex = {
 export const stringConstant = Object.assign(StringConstant, {
     365080655670: 365080655670
 });
+
+export const selector = {
+    vamtigerBrowserMethod: `script[src="${ScriptUrl.vamtigerBrowserMethod}"]`
+}

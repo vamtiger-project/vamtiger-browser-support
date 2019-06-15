@@ -2,7 +2,7 @@ import { supportFile } from './vamtiger-web-component-support';
 import { IUpdateBrowserSupport } from './types';
 
 const params = { supportFile } as IUpdateBrowserSupport;
-const polyfill = 'https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-bundle.js';
+const polyfill = 'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs/webcomponents-bundle.js';
 
 addEventListener('WebComponentsReady', handleWebComponentsReady);
 

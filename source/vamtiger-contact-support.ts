@@ -6,7 +6,7 @@ const rootPath = getRootPath();
 export const supportFile = 'vamtiger-contact-support';
 export const polyfillChain = [
     [
-        'https://unpkg.com/aws-sdk@latest/dist/aws-sdk.min.js',
+        'https://cdn.jsdelivr.net/npm/aws-sdk@latest/dist/aws-sdk.min.js',
         `${rootPath}/vamtiger-contact-polyfill-support.js`
     ],
     [`${rootPath}/vamtiger-contact-polyfill.js`]

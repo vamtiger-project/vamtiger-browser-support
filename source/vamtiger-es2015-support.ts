@@ -1,5 +1,5 @@
 const supportFile = 'vamtiger-es2015-support';
-const polyfill = 'https://unpkg.com/babel-polyfill/dist/polyfill.min.js';
+const polyfill = 'https://cdn.jsdelivr.net/npm/babel-polyfill@latest/dist/polyfill.min.js';
 const test = `
     class VamtigerEs2015Support {
         get result() {
