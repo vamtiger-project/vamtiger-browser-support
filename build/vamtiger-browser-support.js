@@ -1,2 +1,775 @@
-!function(){"use strict";var t,r,e,n,o,a,i,u,c,s,l,f,p,d,m,h,y,v,w,b,g,S,_,j,O,P,B,x,M,T,E,A,k,C,q,F,I;function J(t,r,e,n){return new(e||(e=Promise))(function(o,a){function i(t){try{c(n.next(t))}catch(t){a(t)}}function u(t){try{c(n.throw(t))}catch(t){a(t)}}function c(t){t.done?o(t.value):new e(function(r){r(t.value)}).then(i,u)}c((n=n.apply(t,r)).next())})}!function(t){var r="object"==typeof global?global:"object"==typeof self?self:"object"==typeof this?this:{};function e(t,e){return t!==r&&("function"==typeof Object.create?Object.defineProperty(t,"__esModule",{value:!0}):t.__esModule=!0),function(r,n){return t[r]=e?e(r,n):n}}"function"==typeof define&&define.amd?define("tslib",["exports"],function(n){t(e(r,e(n)))}):"object"==typeof module&&"object"==typeof module.exports?t(e(r,e(module.exports))):t(e(r))}(function(g){var S=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(t,r){t.__proto__=r}||function(t,r){for(var e in r)r.hasOwnProperty(e)&&(t[e]=r[e])};t=function(t,r){function e(){this.constructor=t}S(t,r),t.prototype=null===r?Object.create(r):(e.prototype=r.prototype,new e)},r=Object.assign||function(t){for(var r,e=1,n=arguments.length;e<n;e++)for(var o in r=arguments[e])Object.prototype.hasOwnProperty.call(r,o)&&(t[o]=r[o]);return t},e=function(t,r){var e={};for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&r.indexOf(n)<0&&(e[n]=t[n]);if(null!=t&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(n=Object.getOwnPropertySymbols(t);o<n.length;o++)r.indexOf(n[o])<0&&Object.prototype.propertyIsEnumerable.call(t,n[o])&&(e[n[o]]=t[n[o]])}return e},n=function(t,r,e,n){var o,a=arguments.length,i=a<3?r:null===n?n=Object.getOwnPropertyDescriptor(r,e):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(t,r,e,n);else for(var u=t.length-1;u>=0;u--)(o=t[u])&&(i=(a<3?o(i):a>3?o(r,e,i):o(r,e))||i);return a>3&&i&&Object.defineProperty(r,e,i),i},o=function(t,r){return function(e,n){r(e,n,t)}},a=function(t,r){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,r)},i=function(t,r,e,n){return new(e||(e=Promise))(function(o,a){function i(t){try{c(n.next(t))}catch(t){a(t)}}function u(t){try{c(n.throw(t))}catch(t){a(t)}}function c(t){t.done?o(t.value):new e(function(r){r(t.value)}).then(i,u)}c((n=n.apply(t,r||[])).next())})},u=function(t,r){var e,n,o,a,i={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return a={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a;function u(a){return function(u){return function(a){if(e)throw new TypeError("Generator is already executing.");for(;i;)try{if(e=1,n&&(o=2&a[0]?n.return:a[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,a[1])).done)return o;switch(n=0,o&&(a=[2&a[0],o.value]),a[0]){case 0:case 1:o=a;break;case 4:return i.label++,{value:a[1],done:!1};case 5:i.label++,n=a[1],a=[0];continue;case 7:a=i.ops.pop(),i.trys.pop();continue;default:if(!(o=(o=i.trys).length>0&&o[o.length-1])&&(6===a[0]||2===a[0])){i=0;continue}if(3===a[0]&&(!o||a[1]>o[0]&&a[1]<o[3])){i.label=a[1];break}if(6===a[0]&&i.label<o[1]){i.label=o[1],o=a;break}if(o&&i.label<o[2]){i.label=o[2],i.ops.push(a);break}o[2]&&i.ops.pop(),i.trys.pop();continue}a=r.call(t,i)}catch(t){a=[6,t],n=0}finally{e=o=0}if(5&a[0])throw a[1];return{value:a[0]?a[1]:void 0,done:!0}}([a,u])}}},c=function(t,r){for(var e in t)r.hasOwnProperty(e)||(r[e]=t[e])},s=function(t){var r="function"==typeof Symbol&&t[Symbol.iterator],e=0;return r?r.call(t):{next:function(){return t&&e>=t.length&&(t=void 0),{value:t&&t[e++],done:!t}}}},l=function(t,r){var e="function"==typeof Symbol&&t[Symbol.iterator];if(!e)return t;var n,o,a=e.call(t),i=[];try{for(;(void 0===r||r-- >0)&&!(n=a.next()).done;)i.push(n.value)}catch(t){o={error:t}}finally{try{n&&!n.done&&(e=a.return)&&e.call(a)}finally{if(o)throw o.error}}return i},f=function(){for(var t=[],r=0;r<arguments.length;r++)t=t.concat(l(arguments[r]));return t},p=function(){for(var t=0,r=0,e=arguments.length;r<e;r++)t+=arguments[r].length;var n=Array(t),o=0;for(r=0;r<e;r++)for(var a=arguments[r],i=0,u=a.length;i<u;i++,o++)n[o]=a[i];return n},d=function(t){return this instanceof d?(this.v=t,this):new d(t)},m=function(t,r,e){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var n,o=e.apply(t,r||[]),a=[];return n={},i("next"),i("throw"),i("return"),n[Symbol.asyncIterator]=function(){return this},n;function i(t){o[t]&&(n[t]=function(r){return new Promise(function(e,n){a.push([t,r,e,n])>1||u(t,r)})})}function u(t,r){try{(e=o[t](r)).value instanceof d?Promise.resolve(e.value.v).then(c,s):l(a[0][2],e)}catch(t){l(a[0][3],t)}var e}function c(t){u("next",t)}function s(t){u("throw",t)}function l(t,r){t(r),a.shift(),a.length&&u(a[0][0],a[0][1])}},h=function(t){var r,e;return r={},n("next"),n("throw",function(t){throw t}),n("return"),r[Symbol.iterator]=function(){return this},r;function n(n,o){r[n]=t[n]?function(r){return(e=!e)?{value:d(t[n](r)),done:"return"===n}:o?o(r):r}:o}},y=function(t){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var r,e=t[Symbol.asyncIterator];return e?e.call(t):(t="function"==typeof s?s(t):t[Symbol.iterator](),r={},n("next"),n("throw"),n("return"),r[Symbol.asyncIterator]=function(){return this},r);function n(e){r[e]=t[e]&&function(r){return new Promise(function(n,o){(function(t,r,e,n){Promise.resolve(n).then(function(r){t({value:r,done:e})},r)})(n,o,(r=t[e](r)).done,r.value)})}}},v=function(t,r){return Object.defineProperty?Object.defineProperty(t,"raw",{value:r}):t.raw=r,t},w=function(t){if(t&&t.__esModule)return t;var r={};if(null!=t)for(var e in t)Object.hasOwnProperty.call(t,e)&&(r[e]=t[e]);return r.default=t,r},b=function(t){return t&&t.__esModule?t:{default:t}},g("__extends",t),g("__assign",r),g("__rest",e),g("__decorate",n),g("__param",o),g("__metadata",a),g("__awaiter",i),g("__generator",u),g("__exportStar",c),g("__values",s),g("__read",l),g("__spread",f),g("__spreadArrays",p),g("__await",d),g("__asyncGenerator",m),g("__asyncDelegator",h),g("__asyncValues",y),g("__makeTemplateObject",v),g("__importStar",w),g("__importDefault",b)}),function(t){t.nothing="",t.build="build",t.vamtiger="vamtiger",t.slash="/",t.jsExtension=".js",t.bashAnd="&&",t.arn="arn",t.sns="sns",t.aws="aws",t.colon=":",t.hyphen="-",t["vamtiger-contact"]="vamtiger-contact",t["5e5164d3"]="5e5164d3",t.cc71="cc71",t["4e5b"]="4e5b",t["9c34"]="9c34",t["042fe735f31c"]="042fe735f31c"}(g||(g={})),function(t){t.usWest2="us-west-2"}(S||(S={})),function(t){t.meta="meta",t.script="script"}(_||(_={})),function(t){t.vamtigerBrowserSupport="vamtiger-browser-support"}(j||(j={})),function(t){t.id="id"}(O||(O={})),function(t){t.baseUrl="baseUrl",t.name="name",t.url="url",t.primary="primary",t.loaded="loaded",t.supported="supported",t.unsupported="unsupported",t.error="error",t.polyfill="polyfill",t.loadCritical="loadCritical",t.load="load",t.wait="wait"}(P||(P={})),function(t){t.botSupport="data-bot-support",t.es2015Support="data-es2015-support",t.elementQuerySupport="data-element-query-support",t.webComponentSupport="data-web-component-support",t.fetchSupport="data-fetch-support",t.awsSupport="data-aws-support",t.contactSupport="data-contact-support"}(B||(B={})),function(t){t.vamtigerBrowserSupportScript='script[src*="vamtiger-browser-support"]',t.vamtigerBrowserMethodJsonJs='[src$="vamtiger-browser-method.js.json.js"]',t.vamtigerBrowserMethodJson='[data-name$="vamtiger-browser-method.js.json"]'}(x||(x={})),function(t){t.vamtigerBrowserMethod="https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js",t.vamtigerBrowserMethodJsonJs="https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js"}(M||(M={})),function(t){t.notBrowser="This is not a web browser",t.noFormForSelector="No Form for Selector",t.noFieldInFormForSelector="No Field in Form for Selector"}(T||(T={})),function(t){t.bundleSource="bundle-source"}(E||(E={})),function(t){t.primary="primary",t.secondary="secondary"}(A||(A={})),function(t){t.loadCritical="loadCritical",t.load="load"}(k||(k={})),function(t){t.innerHTML="innerHTML"}(C||(C={})),function(t){t.touchSupport="vamtigerTouchSupport"}(q||(q={})),function(t){t.elementQuery="vamtiger-element-query-support"}(F||(F={})),function(t){t.elementQuery="https://cdn.jsdelivr.net/npm/eqcss@latest/EQCSS.min.js"}(I||(I={}));var L,V,R,D,H,Q,U,$,N,G,W,z,K,X,Y,Z=Object.keys(A),tt=/^data/,rt=/(.*?Support)(Primary)?$/,et=/(\d|latest)$/,nt=/bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i,ot=Object.assign(g,{365080655670:365080655670}),at=(M.vamtigerBrowserMethod,g.vamtiger),it=g.jsExtension,ut=tt,ct=Object.keys(B),st=[],lt=new Set(["botSupport","es2015Support"]),ft=Object.assign({},B),pt={parallel:new Set([A.primary,A.secondary]),series:new Set([])},dt=Array.from(new Set([P.supported,P.unsupported])),mt=Array.from(new Set(Object.keys(k)));L=ot.arn,V=ot.aws,R=ot.sns,D=ot[365080655670],H=ot["vamtiger-contact"],Q=ot.colon,U=ot["5e5164d3"],$=ot.cc71,N=ot["4e5b"],G=ot["9c34"],W=ot["042fe735f31c"],z=ot.hyphen,K=S.usWest2,X=[L,V,R,K,D,H].join(Q),Y=[K,[U,$,N,G,W].join(z)].join(Q),Array.from(X),Array.from(Y),Array.from(K);ct.forEach(function(t){return ft[t]=ft[t].replace(ut,at)+it});var ht=j.vamtigerBrowserSupport;var yt=j.vamtigerBrowserSupport;var vt=pt.parallel,wt=0,bt=!1;function gt(){return J(this,void 0,void 0,function(){var t,r,e,n,o,a;return __generator(this,function(i){return t=window.VamtigerBrowserMethod,r=t.loadScript,e=Z[wt],n=function(t){var r,e=t.supportType,n=window[ht],o=new Set;return Array.from(n.children).forEach(function(t){(r=t.dataset).hasOwnProperty(e)&&o.add(r.url)}),Array.from(o)}({supportType:e}),o=[],vt.has(e)?(a=Promise.all(n.map(function(t){return r({src:t})})),n.length||jt({supportType:e})):e?a=n.reduce(function(t,e){return t.then(function(){return r({src:e})}).then(function(t){return o.push(t)&&o})},Promise.resolve(o)):e||bt||(bt=!0,a=function(){return J(this,void 0,void 0,function(){var t,r,e,n;return __generator(this,function(o){return t=window.VamtigerBrowserMethod,r=t.loadScript,e=window[yt],n=[],[2,mt.map(function(t){return e.dataset[t]}).filter(function(t){return t}).reduce(function(t,e){return t.then(function(){return r({src:e})}).then(function(t){return n.push(t)&&n})},Promise.resolve(n))]})})}()),wt++,[2,a]})})}var St=j.vamtigerBrowserSupport,_t=P.wait;function jt(t){var r=t.supportType,e=window[St],n="meta[data-"+r+"]",o=Array.from(e.querySelectorAll(n)),a=o.filter(function(t){return dt.some(function(r){return t.dataset.hasOwnProperty(r)})}).filter(function(t){return!t.dataset.hasOwnProperty(_t)});o&&o.length===a.length&&gt().catch(console.warn)}var Ot=j.vamtigerBrowserSupport,Pt=g.nothing,Bt=Object.keys(A);window.VamtigerBrowserSupport||(window.VamtigerBrowserSupport=function(t){var r=t.supportFile,e=t.supported,n=t.polyfill,o=t.polyfills,a=t.polyfillChain,i=t.error,u=t.wait;return J(this,void 0,void 0,function(){var t,c,s,l,f,p,d,m,h;return __generator(this,function(y){return t=window[Ot],window.VamtigerBrowserSupport,c=window.VamtigerBrowserMethod,s=c.loadScript,l=c.loadScripts,f=c.loadScriptsSequentially,p="[data-url*="+r+"]",d=t.querySelector(p),m=d.dataset,h=Bt.find(function(t){return m.hasOwnProperty(t)}),e?m.supported=Pt:m.unsupported=Pt,u?m.wait=Pt:delete m.wait,i&&(m.error=i),n?(m.polyfill=n,s({src:n}).then(function(){return jt({supportType:h})})):a?f(a.map(function(t){return t.map(function(t){return{src:t}})})).then(function(t){return t.forEach(function(t,r){var e=t.src;return m["polyfill-"+(r+1)]=e})}).then(function(){return jt({supportType:h})}):o?l(o.map(function(t){return{src:t}})).then(function(t){return t.forEach(function(t,r){var e=t.src;return m["polyfill-"+(r+1)]=e})}).then(function(){return jt({supportType:h})}):jt({supportType:h}),[2]})})});var xt=O.id,Mt=j.vamtigerBrowserSupport,Tt=P.baseUrl,Et=(B.es2015Support,g.nothing,g.slash),At=(g.build,x.vamtigerBrowserSupportScript),kt=et;var Ct=j.vamtigerBrowserSupport,qt=g.slash,Ft=g.nothing,It=_.meta,Jt=rt;var Lt=j.vamtigerBrowserSupport,Vt=rt;function Rt(){var t=window[Lt].dataset;Object.keys(t).filter(function(t){return t.match(Vt)}).sort().forEach(function(t){return function(t){var r=t.support,e=window[Ct],n=e.dataset.baseUrl,o=r.match(Jt)||[],a=o[1],i=o[2],u=[n,ft[a]].join(qt),c=document.createElement(It);c.dataset.name=a,c.dataset.url=u,i?c.dataset[i.toLowerCase()]=Ft:c.dataset[A.secondary]=Ft,e.appendChild(c)}({support:t,primary:lt.has(t)})})}var Dt=nt;var Ht=JSON.parse;function Qt(){return J(this,void 0,void 0,function(){var t,r;return __generator(this,function(e){switch(e.label){case 0:return t=[(n=navigator.userAgent,navigator&&Boolean(n.match(Dt))&&M.vamtigerBrowserMethod||M.vamtigerBrowserMethodJsonJs)].concat(st).filter(function(t){return t}),[4,Promise.all(t.map(Ut))];case 1:return r=e.sent(),[4,function(){var t=this;return new Promise(function(r,e){return J(t,void 0,void 0,function(){var t,e,n,o,a,i,u;return __generator(this,function(c){return t=document.head,e=x.vamtigerBrowserMethodJson,n=document.querySelector(e),o=n&&n.innerHTML,a=o&&Ht(o),i=a&&a.text,u=document.createElement("script"),i&&(u.dataset.name=M.vamtigerBrowserMethod,u.innerHTML=i,t.appendChild(u)),r(),[2]})})})}()];case 2:return e.sent(),[2,r]}var n})})}function Ut(t){return new Promise(function(r,e){var n=document.head,o='[src="'+t+'"]',a=n.querySelector(o),i=!a&&document.createElement("script");i?(i.addEventListener("load",function(t){return r(i)}),i.addEventListener("error",e),i.src=t,n.appendChild(i)):a?r(a):r()})}var $t=g.nothing;function Nt(t){console.warn(t),console.warn(Gt)}var Gt=T.notBrowser;addEventListener("load",function t(r){return J(this,void 0,void 0,function(){return __generator(this,function(r){switch(r.label){case 0:return removeEventListener("load",t),[4,Qt()];case 1:return r.sent(),e=document.head,n=e.firstChild,o=document.createElement(_.meta),a=document.querySelector(At),i=a.src.split(Et),u=new Set(i.slice(0,i.length-1)),c=a.src.match(kt)&&a.src+"/build"||Array.from(u).join(Et),o.setAttribute(xt,Mt),a&&Object.assign(o.dataset,a.dataset),o.dataset[Tt]=c,e.insertBefore(o,n),Rt(),gt().catch(Nt),function(){J(this,void 0,void 0,function(){var t,r,e,n,o,a;return __generator(this,function(i){return t=window.ontouchstart,r=window.document,e=r.body,n=e.dataset,o=navigator.maxTouchPoints,a=navigator.msMaxTouchPoints,!!(t||window.hasOwnProperty("DocumentTouch")||o||a)&&(n[q.touchSupport]=$t),[2]})})}(),[2]}var e,n,o,a,i,u,c})})})}();
+(function () {
+'use strict';
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global global, define, System, Reflect, Promise */
+var __extends;
+var __assign;
+var __rest;
+var __decorate;
+var __param;
+var __metadata;
+var __awaiter;
+var __generator$1;
+var __exportStar;
+var __values;
+var __read;
+var __spread;
+var __spreadArrays;
+var __await;
+var __asyncGenerator;
+var __asyncDelegator;
+var __asyncValues;
+var __makeTemplateObject;
+var __importStar;
+var __importDefault;
+(function (factory) {
+    var root = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
+    if (typeof define === "function" && define.amd) {
+        define("tslib", ["exports"], function (exports) { factory(createExporter(root, createExporter(exports))); });
+    }
+    else if (typeof module === "object" && typeof module.exports === "object") {
+        factory(createExporter(root, createExporter(module.exports)));
+    }
+    else {
+        factory(createExporter(root));
+    }
+    function createExporter(exports, previous) {
+        if (exports !== root) {
+            if (typeof Object.create === "function") {
+                Object.defineProperty(exports, "__esModule", { value: true });
+            }
+            else {
+                exports.__esModule = true;
+            }
+        }
+        return function (id, v) { return exports[id] = previous ? previous(id, v) : v; };
+    }
+})
+(function (exporter) {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+
+    __extends = function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+
+    __assign = Object.assign || function (t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+
+    __rest = function (s, e) {
+        var t = {};
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+            t[p] = s[p];
+        if (s != null && typeof Object.getOwnPropertySymbols === "function")
+            for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+                if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                    t[p[i]] = s[p[i]];
+            }
+        return t;
+    };
+
+    __decorate = function (decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+    };
+
+    __param = function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+
+    __metadata = function (metadataKey, metadataValue) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+    };
+
+    __awaiter = function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+            function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    __generator$1 = function (thisArg, body) {
+        var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+        function verb(n) { return function (v) { return step([n, v]); }; }
+        function step(op) {
+            if (f) throw new TypeError("Generator is already executing.");
+            while (_) try {
+                if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+                if (y = 0, t) op = [op[0] & 2, t.value];
+                switch (op[0]) {
+                    case 0: case 1: t = op; break;
+                    case 4: _.label++; return { value: op[1], done: false };
+                    case 5: _.label++; y = op[1]; op = [0]; continue;
+                    case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                    default:
+                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                        if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                        if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                        if (t[2]) _.ops.pop();
+                        _.trys.pop(); continue;
+                }
+                op = body.call(thisArg, _);
+            } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+            if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+        }
+    };
+
+    __exportStar = function (m, exports) {
+        for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    };
+
+    __values = function (o) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+        if (m) return m.call(o);
+        return {
+            next: function () {
+                if (o && i >= o.length) o = void 0;
+                return { value: o && o[i++], done: !o };
+            }
+        };
+    };
+
+    __read = function (o, n) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator];
+        if (!m) return o;
+        var i = m.call(o), r, ar = [], e;
+        try {
+            while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+        }
+        catch (error) { e = { error: error }; }
+        finally {
+            try {
+                if (r && !r.done && (m = i["return"])) m.call(i);
+            }
+            finally { if (e) throw e.error; }
+        }
+        return ar;
+    };
+
+    __spread = function () {
+        for (var ar = [], i = 0; i < arguments.length; i++)
+            ar = ar.concat(__read(arguments[i]));
+        return ar;
+    };
+
+    __spreadArrays = function () {
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+        for (var r = Array(s), k = 0, i = 0; i < il; i++)
+            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+                r[k] = a[j];
+        return r;
+    };
+
+    __await = function (v) {
+        return this instanceof __await ? (this.v = v, this) : new __await(v);
+    };
+
+    __asyncGenerator = function (thisArg, _arguments, generator) {
+        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        var g = generator.apply(thisArg, _arguments || []), i, q = [];
+        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+        function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+        function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+        function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);  }
+        function fulfill(value) { resume("next", value); }
+        function reject(value) { resume("throw", value); }
+        function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+    };
+
+    __asyncDelegator = function (o) {
+        var i, p;
+        return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+        function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+    };
+
+    __asyncValues = function (o) {
+        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        var m = o[Symbol.asyncIterator], i;
+        return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+        function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+        function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+    };
+
+    __makeTemplateObject = function (cooked, raw) {
+        if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+        return cooked;
+    };
+
+    __importStar = function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+        result["default"] = mod;
+        return result;
+    };
+
+    __importDefault = function (mod) {
+        return (mod && mod.__esModule) ? mod : { "default": mod };
+    };
+
+    exporter("__extends", __extends);
+    exporter("__assign", __assign);
+    exporter("__rest", __rest);
+    exporter("__decorate", __decorate);
+    exporter("__param", __param);
+    exporter("__metadata", __metadata);
+    exporter("__awaiter", __awaiter);
+    exporter("__generator", __generator$1);
+    exporter("__exportStar", __exportStar);
+    exporter("__values", __values);
+    exporter("__read", __read);
+    exporter("__spread", __spread);
+    exporter("__spreadArrays", __spreadArrays);
+    exporter("__await", __await);
+    exporter("__asyncGenerator", __asyncGenerator);
+    exporter("__asyncDelegator", __asyncDelegator);
+    exporter("__asyncValues", __asyncValues);
+    exporter("__makeTemplateObject", __makeTemplateObject);
+    exporter("__importStar", __importStar);
+    exporter("__importDefault", __importDefault);
+});
+
+function __awaiter$1(thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator.throw(value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments)).next());
+    });
+}
+
+var StringConstant;
+(function (StringConstant) {
+    StringConstant["nothing"] = "";
+    StringConstant["build"] = "build";
+    StringConstant["vamtiger"] = "vamtiger";
+    StringConstant["slash"] = "/";
+    StringConstant["jsExtension"] = ".js";
+    StringConstant["bashAnd"] = "&&";
+    StringConstant["arn"] = "arn";
+    StringConstant["sns"] = "sns";
+    StringConstant["aws"] = "aws";
+    StringConstant["colon"] = ":";
+    StringConstant["hyphen"] = "-";
+    StringConstant["vamtiger-contact"] = "vamtiger-contact";
+    StringConstant["5e5164d3"] = "5e5164d3";
+    StringConstant["cc71"] = "cc71";
+    StringConstant["4e5b"] = "4e5b";
+    StringConstant["9c34"] = "9c34";
+    StringConstant["042fe735f31c"] = "042fe735f31c";
+})(StringConstant || (StringConstant = {}));
+var Region;
+(function (Region) {
+    Region["usWest2"] = "us-west-2";
+})(Region || (Region = {}));
+var ElmentName;
+(function (ElmentName) {
+    ElmentName["meta"] = "meta";
+    ElmentName["script"] = "script";
+})(ElmentName || (ElmentName = {}));
+var ElementId;
+(function (ElementId) {
+    ElementId["vamtigerBrowserSupport"] = "vamtiger-browser-support";
+})(ElementId || (ElementId = {}));
+var ElementAttribute;
+(function (ElementAttribute) {
+    ElementAttribute["id"] = "id";
+})(ElementAttribute || (ElementAttribute = {}));
+var MetaElementAttribute;
+(function (MetaElementAttribute) {
+    MetaElementAttribute["baseUrl"] = "baseUrl";
+    MetaElementAttribute["name"] = "name";
+    MetaElementAttribute["url"] = "url";
+    MetaElementAttribute["primary"] = "primary";
+    MetaElementAttribute["loaded"] = "loaded";
+    MetaElementAttribute["supported"] = "supported";
+    MetaElementAttribute["unsupported"] = "unsupported";
+    MetaElementAttribute["error"] = "error";
+    MetaElementAttribute["polyfill"] = "polyfill";
+    MetaElementAttribute["loadCritical"] = "loadCritical";
+    MetaElementAttribute["load"] = "load";
+    MetaElementAttribute["wait"] = "wait";
+})(MetaElementAttribute || (MetaElementAttribute = {}));
+var MetaElementBrowserSupportAttribute;
+(function (MetaElementBrowserSupportAttribute) {
+    MetaElementBrowserSupportAttribute["botSupport"] = "data-bot-support";
+    MetaElementBrowserSupportAttribute["es2015Support"] = "data-es2015-support";
+    MetaElementBrowserSupportAttribute["elementQuerySupport"] = "data-element-query-support";
+    MetaElementBrowserSupportAttribute["webComponentSupport"] = "data-web-component-support";
+    MetaElementBrowserSupportAttribute["fetchSupport"] = "data-fetch-support";
+    MetaElementBrowserSupportAttribute["awsSupport"] = "data-aws-support";
+    MetaElementBrowserSupportAttribute["contactSupport"] = "data-contact-support";
+})(MetaElementBrowserSupportAttribute || (MetaElementBrowserSupportAttribute = {}));
+var Selector;
+(function (Selector) {
+    Selector["vamtigerBrowserSupportScript"] = "script[src*=\"vamtiger-browser-support\"]";
+    Selector["vamtigerBrowserMethodJsonJs"] = "[src$=\"vamtiger-browser-method.js.json.js\"]";
+    Selector["vamtigerBrowserMethodJson"] = "[data-name$=\"vamtiger-browser-method.js.json\"]";
+})(Selector || (Selector = {}));
+var ScriptUrl;
+(function (ScriptUrl) {
+    ScriptUrl["vamtigerBrowserMethod"] = "https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js";
+    ScriptUrl["vamtigerBrowserMethodJsonJs"] = "https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js";
+})(ScriptUrl || (ScriptUrl = {}));
+var ErrorMessage;
+(function (ErrorMessage) {
+    ErrorMessage["notBrowser"] = "This is not a web browser";
+    ErrorMessage["noFormForSelector"] = "No Form for Selector";
+    ErrorMessage["noFieldInFormForSelector"] = "No Field in Form for Selector";
+})(ErrorMessage || (ErrorMessage = {}));
+var NpmScript;
+(function (NpmScript) {
+    NpmScript["bundleSource"] = "bundle-source";
+})(NpmScript || (NpmScript = {}));
+var SupportType;
+(function (SupportType) {
+    SupportType["primary"] = "primary";
+    SupportType["secondary"] = "secondary";
+})(SupportType || (SupportType = {}));
+var LoadOnComplete;
+(function (LoadOnComplete) {
+    LoadOnComplete["loadCritical"] = "loadCritical";
+    LoadOnComplete["load"] = "load";
+})(LoadOnComplete || (LoadOnComplete = {}));
+var VamtigerFormDataSupportFormFieldValue;
+(function (VamtigerFormDataSupportFormFieldValue) {
+    VamtigerFormDataSupportFormFieldValue["innerHTML"] = "innerHTML";
+})(VamtigerFormDataSupportFormFieldValue || (VamtigerFormDataSupportFormFieldValue = {}));
+var DocumentDataAttribute;
+(function (DocumentDataAttribute) {
+    DocumentDataAttribute["touchSupport"] = "vamtigerTouchSupport";
+})(DocumentDataAttribute || (DocumentDataAttribute = {}));
+var SupportFile;
+(function (SupportFile) {
+    SupportFile["elementQuery"] = "vamtiger-element-query-support";
+})(SupportFile || (SupportFile = {}));
+var Polyfill;
+(function (Polyfill) {
+    Polyfill["elementQuery"] = "https://cdn.jsdelivr.net/npm/eqcss@latest/EQCSS.min.js";
+})(Polyfill || (Polyfill = {}));
+var supportTypes = Object.keys(SupportType);
+var regex = {
+    leadingData: /^data/,
+    trailingSupport: /(.*?Support)(Primary)?$/,
+    supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
+    distTag: /(\d|latest)$/,
+    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
+};
+var stringConstant = Object.assign(StringConstant, {
+    365080655670: 365080655670
+});
+var selector = {
+    vamtigerBrowserMethod: "script[src=\"" + ScriptUrl.vamtigerBrowserMethod + "\"]"
+};
+
+var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension;
+var leadingData = regex.leadingData;
+var supportKeys = Object.keys(MetaElementBrowserSupportAttribute);
+var dependencies = [];
+var primarySupport = new Set([
+    'botSupport',
+    'es2015Support'
+]);
+var supportScript = Object.assign({}, MetaElementBrowserSupportAttribute);
+var loadSupport = {
+    parallel: new Set([
+        SupportType.primary,
+        SupportType.secondary
+    ]),
+    series: new Set([])
+};
+var supportDone = Array.from(new Set([
+    MetaElementAttribute.supported,
+    MetaElementAttribute.unsupported
+]));
+var loadOnComplete = Array.from(new Set(Object.keys(LoadOnComplete)));
+var vc = gvc();
+supportKeys.forEach(function (key) { return supportScript[key] = supportScript[key].replace(leadingData, vamtiger) + jsExtension; });
+function gvc() {
+    var a = stringConstant.arn, b = stringConstant.aws, c = stringConstant.sns, e = stringConstant["365080655670"], f = stringConstant["vamtiger-contact"], g = stringConstant.colon, h = stringConstant["5e5164d3"], i = stringConstant.cc71, j = stringConstant["4e5b"], k = stringConstant["9c34"], l = stringConstant["042fe735f31c"], m = stringConstant.hyphen;
+    var d = Region.usWest2;
+    var z = [
+        a,
+        b,
+        c,
+        d,
+        e,
+        f
+    ].join(g);
+    var x = [
+        d,
+        [
+            h,
+            i,
+            j,
+            k,
+            l
+        ].join(m)
+    ].join(g);
+    var y = {
+        z: Array.from(z),
+        x: Array.from(x),
+        y: Array.from(d)
+    };
+    return y;
+}
+
+var vamtigerBrowserSupportId = ElementId.vamtigerBrowserSupport;
+function getSupportUrls (_a) {
+    var supportType = _a.supportType;
+    var _b = vamtigerBrowserSupportId, vamtigerBrowserSupport = window[_b];
+    var urls = new Set();
+    var elements = Array.from(vamtigerBrowserSupport.children);
+    var data;
+    elements.forEach(function (element) {
+        data = element.dataset;
+        if (data.hasOwnProperty(supportType)) {
+            urls.add(data.url);
+        }
+    });
+    return Array.from(urls);
+}
+
+var vamtigerBrowserSupportId$1 = ElementId.vamtigerBrowserSupport;
+function loadScripts () {
+    return __awaiter$1(this, void 0, void 0, function () {
+        var VamtigerBrowserMethod, loadScript, _a, vamtigerBrowserSupport, scripts, supportUrls, loadScripts;
+        return __generator(this, function (_b) {
+            VamtigerBrowserMethod = window.VamtigerBrowserMethod;
+            loadScript = VamtigerBrowserMethod.loadScript;
+            _a = vamtigerBrowserSupportId$1, vamtigerBrowserSupport = window[_a];
+            scripts = [];
+            supportUrls = loadOnComplete
+                .map(function (key) { return vamtigerBrowserSupport.dataset[key]; })
+                .filter(function (url) { return url; });
+            loadScripts = supportUrls.reduce(function (loadSupport$$1, src) { return loadSupport$$1
+                .then(function () { return loadScript({ src: src }); })
+                .then(function (script) { return scripts.push(script) && scripts; }); }, Promise.resolve(scripts));
+            return [2 /*return*/, loadScripts];
+        });
+    });
+}
+
+var parallel = loadSupport.parallel;
+var index = 0;
+var done = false;
+function loadSupport$1 () {
+    return __awaiter$1(this, void 0, void 0, function () {
+        var VamtigerBrowserMethod, loadScript, supportType, supportUrls, supportScripts, scripts;
+        return __generator(this, function (_a) {
+            VamtigerBrowserMethod = window.VamtigerBrowserMethod;
+            loadScript = VamtigerBrowserMethod.loadScript;
+            supportType = supportTypes[index];
+            supportUrls = getSupportUrls({ supportType: supportType });
+            supportScripts = [];
+            if (parallel.has(supportType)) {
+                scripts = Promise.all(supportUrls.map(function (src) { return loadScript({ src: src }); }));
+                if (!supportUrls.length) {
+                    loadNextSupport({ supportType: supportType });
+                }
+            }
+            else if (supportType) {
+                scripts = supportUrls.reduce(function (loadSupport$$1, src) { return loadSupport$$1
+                    .then(function () { return loadScript({ src: src }); })
+                    .then(function (script) { return supportScripts.push(script) && supportScripts; }); }, Promise.resolve(supportScripts));
+            }
+            else if (!supportType && !done) {
+                done = true;
+                scripts = loadScripts();
+            }
+            index++;
+            return [2 /*return*/, scripts];
+        });
+    });
+}
+
+var vamtigerBrowserSupportId$2 = ElementId.vamtigerBrowserSupport;
+var wait = MetaElementAttribute.wait;
+function loadNextSupport (_a) {
+    var supportType = _a.supportType;
+    var _b = vamtigerBrowserSupportId$2, vamtigerBrowserSupport = window[_b];
+    var supportTypeSelector = "meta[data-" + supportType + "]";
+    var supportTypeMetaElements = Array.from(vamtigerBrowserSupport.querySelectorAll(supportTypeSelector));
+    var supportTypeMetaElementsDone = supportTypeMetaElements
+        .filter(function (element) { return supportDone.some(function (key) { return element.dataset.hasOwnProperty(key); }); })
+        .filter(function (element) { return !element.dataset.hasOwnProperty(wait); });
+    var loadNextSupport = supportTypeMetaElements && supportTypeMetaElements.length === supportTypeMetaElementsDone.length;
+    if (loadNextSupport) {
+        loadSupport$1().catch(console.warn);
+    }
+}
+
+var vamtigerBrowserSupportId$3 = ElementId.vamtigerBrowserSupport;
+var nothing = StringConstant.nothing;
+var supportTypes$1 = Object.keys(SupportType);
+function updateBrowserSupport(_a) {
+    var supportFile = _a.supportFile, supported = _a.supported, polyfill = _a.polyfill, polyfills = _a.polyfills, polyfillChain = _a.polyfillChain, error = _a.error, wait = _a.wait;
+    return __awaiter$1(this, void 0, void 0, function () {
+        var _b, vamtigerBrowserSupport, VamtigerBrowserSupport, VamtigerBrowserMethod, loadScript, loadScripts, loadScriptsSequentially, selector$$1, metaElement, data, supportType;
+        return __generator(this, function (_c) {
+            _b = vamtigerBrowserSupportId$3, vamtigerBrowserSupport = window[_b], VamtigerBrowserSupport = window.VamtigerBrowserSupport, VamtigerBrowserMethod = window.VamtigerBrowserMethod;
+            loadScript = VamtigerBrowserMethod.loadScript, loadScripts = VamtigerBrowserMethod.loadScripts, loadScriptsSequentially = VamtigerBrowserMethod.loadScriptsSequentially;
+            selector$$1 = "[data-url*=" + supportFile + "]";
+            metaElement = vamtigerBrowserSupport.querySelector(selector$$1);
+            data = metaElement.dataset;
+            supportType = supportTypes$1.find(function (supportType) { return data.hasOwnProperty(supportType); });
+            if (supported) {
+                data.supported = nothing;
+            }
+            else {
+                data.unsupported = nothing;
+            }
+            if (wait) {
+                data.wait = nothing;
+            }
+            else {
+                delete data.wait;
+            }
+            if (error) {
+                data.error = error;
+            }
+            if (polyfill) {
+                data.polyfill = polyfill;
+                loadScript({ src: polyfill })
+                    .then(function () { return loadNextSupport({ supportType: supportType }); });
+            }
+            else if (polyfillChain) {
+                loadScriptsSequentially(polyfillChain.map(function (srcs) { return srcs.map(function (src) { return ({ src: src }); }); }))
+                    .then(function (scripts) { return scripts.forEach(function (_a, index) {
+                    var polyfill = _a.src;
+                    return data["polyfill-" + (index + 1)] = polyfill;
+                }); })
+                    .then(function () { return loadNextSupport({ supportType: supportType }); });
+            }
+            else if (polyfills) {
+                loadScripts(polyfills.map(function (polyfill) { return ({ src: polyfill }); }))
+                    .then(function (scripts) { return scripts.forEach(function (_a, index) {
+                    var polyfill = _a.src;
+                    return data["polyfill-" + (index + 1)] = polyfill;
+                }); })
+                    .then(function () { return loadNextSupport({ supportType: supportType }); });
+            }
+            else {
+                loadNextSupport({ supportType: supportType });
+            }
+            return [2 /*return*/];
+        });
+    });
+}
+if (!window.VamtigerBrowserSupport) {
+    window.VamtigerBrowserSupport = updateBrowserSupport;
+}
+
+var id = ElementAttribute.id;
+var vamtigerBrowserSupport = ElementId.vamtigerBrowserSupport;
+var baseUrl = MetaElementAttribute.baseUrl;
+var es2015Support = MetaElementBrowserSupportAttribute.es2015Support;
+var nothing$1 = StringConstant.nothing, slash = StringConstant.slash, build = StringConstant.build;
+var selector$1 = Selector.vamtigerBrowserSupportScript;
+var distTag = regex.distTag;
+function setMetaElement () {
+    var head = document.head;
+    var firstChild = head.firstChild;
+    var metaElement = document.createElement(ElmentName.meta);
+    var vamtigerBrowserSupportScript = document.querySelector(selector$1);
+    var vamtigerBrowserSupportScriptPaths = vamtigerBrowserSupportScript.src.split(slash);
+    var baseUrlPaths = new Set(vamtigerBrowserSupportScriptPaths
+        .slice(0, vamtigerBrowserSupportScriptPaths.length - 1));
+    var baseUrlPath = vamtigerBrowserSupportScript.src.match(distTag)
+        && vamtigerBrowserSupportScript.src + "/build"
+        || Array.from(baseUrlPaths).join(slash);
+    metaElement.setAttribute(id, vamtigerBrowserSupport);
+    vamtigerBrowserSupportScript && Object.assign(metaElement.dataset, vamtigerBrowserSupportScript.dataset);
+    metaElement.dataset[baseUrl] = baseUrlPath;
+    head.insertBefore(metaElement, firstChild);
+}
+
+var vamtigerBrowserSupportId$4 = ElementId.vamtigerBrowserSupport;
+var slash$1 = StringConstant.slash, nothing$2 = StringConstant.nothing;
+var meta = ElmentName.meta;
+var trailingSupport = regex.trailingSupport;
+function setBrowserSupportMetaElement (_a) {
+    var supportDataKey = _a.support;
+    var _b = vamtigerBrowserSupportId$4, vamtigerBrowserSupport = window[_b];
+    var dataset = vamtigerBrowserSupport.dataset;
+    var baseUrl = dataset.baseUrl;
+    var _c = supportDataKey.match(trailingSupport) || [], support = _c[1], supportType = _c[2];
+    var currentSupportScript = supportScript[support];
+    var scriptUrl = [
+        baseUrl,
+        currentSupportScript
+    ].join(slash$1);
+    var metaElement = document.createElement(meta);
+    metaElement.dataset.name = support;
+    metaElement.dataset.url = scriptUrl;
+    if (supportType) {
+        metaElement.dataset[supportType.toLowerCase()] = nothing$2;
+    }
+    else {
+        metaElement.dataset[SupportType.secondary] = nothing$2;
+    }
+    vamtigerBrowserSupport.appendChild(metaElement);
+}
+
+var vamtigerBrowserSupportId$5 = ElementId.vamtigerBrowserSupport;
+var trailingSupport$1 = regex.trailingSupport;
+function setBrowserSupportMetaElements () {
+    var _a = vamtigerBrowserSupportId$5, vamtigerBrowserSupport = window[_a];
+    var dataset = vamtigerBrowserSupport.dataset;
+    var supportKey = Object
+        .keys(dataset)
+        .filter(function (key) { return key.match(trailingSupport$1); })
+        .sort();
+    supportKey.forEach(function (support) { return setBrowserSupportMetaElement({
+        support: support,
+        primary: primarySupport.has(support)
+    }); });
+}
+
+var bot = regex.bot;
+function isBot () {
+    var userAgent = navigator.userAgent;
+    var isBot = navigator && Boolean(userAgent.match(bot));
+    return isBot;
+}
+
+var parse = JSON.parse;
+function loadDependencies () {
+    return __awaiter$1(this, void 0, void 0, function () {
+        var urls, dependencies$$1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    urls = [isBot() && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs]
+                        .concat(dependencies)
+                        .filter(function (url) { return url; });
+                    return [4 /*yield*/, Promise.all(urls.map(loadDependency))];
+                case 1:
+                    dependencies$$1 = _a.sent();
+                    return [4 /*yield*/, loanVamtigerBrowserMethod()];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/, dependencies$$1];
+            }
+        });
+    });
+}
+function loadDependency(src) {
+    return new Promise(function (resolve, reject) {
+        var head = document.head;
+        var selector$$1 = "[src=\"" + src + "\"]";
+        var existingScript = head.querySelector(selector$$1);
+        var script = !existingScript && document.createElement('script');
+        if (script) {
+            script.addEventListener('load', function (event) { return resolve(script); });
+            script.addEventListener('error', reject);
+            script.src = src;
+            head.appendChild(script);
+        }
+        else if (existingScript) {
+            resolve(existingScript);
+        }
+        else {
+            resolve();
+        }
+    });
+}
+function loanVamtigerBrowserMethod() {
+    var _this = this;
+    return new Promise(function (resolve, reject) { return __awaiter$1(_this, void 0, void 0, function () {
+        var head, selector$$1, script, jsonText, data, js, vamtigerBrowserMethodScript;
+        return __generator(this, function (_a) {
+            head = document.head;
+            selector$$1 = Selector.vamtigerBrowserMethodJson;
+            script = document.querySelector(selector$$1);
+            jsonText = script && script.innerHTML;
+            data = jsonText && parse(jsonText);
+            js = data && data.text;
+            vamtigerBrowserMethodScript = document.createElement('script');
+            if (js) {
+                vamtigerBrowserMethodScript.dataset.name = ScriptUrl.vamtigerBrowserMethod;
+                vamtigerBrowserMethodScript.innerHTML = js;
+                head.appendChild(vamtigerBrowserMethodScript);
+            }
+            resolve();
+            return [2 /*return*/];
+        });
+    }); });
+}
+
+var nothing$3 = StringConstant.nothing;
+function setBrowserData () {
+    return __awaiter$1(this, void 0, void 0, function () {
+        var ontouchstart, document, body, dataset, maxTouchPoints, msMaxTouchPoints, touchSupport;
+        return __generator(this, function (_a) {
+            ontouchstart = window.ontouchstart, document = window.document;
+            body = document.body;
+            dataset = body.dataset;
+            maxTouchPoints = navigator.maxTouchPoints, msMaxTouchPoints = navigator.msMaxTouchPoints;
+            touchSupport = (ontouchstart
+                || window.hasOwnProperty('DocumentTouch')
+                || maxTouchPoints
+                || msMaxTouchPoints) ? true : false;
+            if (touchSupport) {
+                dataset[DocumentDataAttribute.touchSupport] = nothing$3;
+            }
+            return [2 /*return*/];
+        });
+    });
+}
+
+function handleLoad(event) {
+    return __awaiter$1(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    removeEventListener('load', handleLoad);
+                    return [4 /*yield*/, loadDependencies()];
+                case 1:
+                    _a.sent();
+                    setMetaElement();
+                    setBrowserSupportMetaElements();
+                    loadSupport$1().catch(handleError);
+                    setBrowserData();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function handleError(error) {
+    console.warn(error);
+    console.warn(notBrowser);
+}
+var notBrowser = ErrorMessage.notBrowser;
+addEventListener('load', handleLoad);
+
+}());
 //# sourceMappingURL=vamtiger-browser-support.js.map

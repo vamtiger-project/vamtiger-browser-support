@@ -1,2 +1,204 @@
-!function(){"use strict";var t,r,e,o,n,a,i,s,c,u,p,d,m,l,f,w,g;!function(t){t.nothing="",t.build="build",t.vamtiger="vamtiger",t.slash="/",t.jsExtension=".js",t.bashAnd="&&",t.arn="arn",t.sns="sns",t.aws="aws",t.colon=":",t.hyphen="-",t["vamtiger-contact"]="vamtiger-contact",t["5e5164d3"]="5e5164d3",t.cc71="cc71",t["4e5b"]="4e5b",t["9c34"]="9c34",t["042fe735f31c"]="042fe735f31c"}(t||(t={})),function(t){t.usWest2="us-west-2"}(r||(r={})),function(t){t.meta="meta",t.script="script"}(e||(e={})),function(t){t.vamtigerBrowserSupport="vamtiger-browser-support"}(o||(o={})),function(t){t.id="id"}(n||(n={})),function(t){t.baseUrl="baseUrl",t.name="name",t.url="url",t.primary="primary",t.loaded="loaded",t.supported="supported",t.unsupported="unsupported",t.error="error",t.polyfill="polyfill",t.loadCritical="loadCritical",t.load="load",t.wait="wait"}(a||(a={})),function(t){t.botSupport="data-bot-support",t.es2015Support="data-es2015-support",t.elementQuerySupport="data-element-query-support",t.webComponentSupport="data-web-component-support",t.fetchSupport="data-fetch-support",t.awsSupport="data-aws-support",t.contactSupport="data-contact-support"}(i||(i={})),function(t){t.vamtigerBrowserSupportScript='script[src*="vamtiger-browser-support"]',t.vamtigerBrowserMethodJsonJs='[src$="vamtiger-browser-method.js.json.js"]',t.vamtigerBrowserMethodJson='[data-name$="vamtiger-browser-method.js.json"]'}(s||(s={})),function(t){t.vamtigerBrowserMethod="https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js",t.vamtigerBrowserMethodJsonJs="https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js"}(c||(c={})),function(t){t.notBrowser="This is not a web browser",t.noFormForSelector="No Form for Selector",t.noFieldInFormForSelector="No Field in Form for Selector"}(u||(u={})),function(t){t.bundleSource="bundle-source"}(p||(p={})),function(t){t.primary="primary",t.secondary="secondary"}(d||(d={})),function(t){t.loadCritical="loadCritical",t.load="load"}(m||(m={})),function(t){t.innerHTML="innerHTML"}(l||(l={})),function(t){t.touchSupport="vamtigerTouchSupport"}(f||(f={})),function(t){t.elementQuery="vamtiger-element-query-support"}(w||(w={})),function(t){t.elementQuery="https://cdn.jsdelivr.net/npm/eqcss@latest/EQCSS.min.js"}(g||(g={}));var b=Object.assign(t,{365080655670:365080655670}),v=(c.vamtigerBrowserMethod,t.vamtiger),h=t.jsExtension,y=/^data/,S=Object.keys(i),j=Object.assign({},i),C=(new Set([d.primary,d.secondary]),new Set([]),Array.from(new Set([a.supported,a.unsupported])),function(){var t=b.arn,e=b.aws,o=b.sns,n=b[365080655670],a=b["vamtiger-contact"],i=b.colon,s=b["5e5164d3"],c=b.cc71,u=b["4e5b"],p=b["9c34"],d=b["042fe735f31c"],m=b.hyphen,l=r.usWest2,f=[t,e,o,l,n,a].join(i),w=[l,[s,c,u,p,d].join(m)].join(i);return{z:Array.from(f),x:Array.from(w),y:Array.from(l)}}());S.forEach(function(t){return j[t]=j[t].replace(y,v)+h});var B=window.AWS,F=window._VamtigerContact_,M=window.VamtigerContact,A=B.config,J=B.SNS,O=B.CognitoIdentityCredentials,T=(location.origin,location.href),x=JSON.stringify,E=F(C),I=E.x,N=E.y,Q=E.z,V="Vamtiger contact: "+T,q=N,W=new O({IdentityPoolId:I});Object.assign(A,{region:q,credentials:W});var z=new J;M||(window.VamtigerContact=function(t){return new Promise(function(r,e){return function(t,r,e){var o=t.subject,n=t.template,a={Message:x({subject:o,template:n,origin:T}),Subject:V,TopicArn:Q};z.publish(a,function(t,o){return t?e(t):r(o)})}(t,r,e)})})}();
+(function () {
+'use strict';
+
+var StringConstant;
+(function (StringConstant) {
+    StringConstant["nothing"] = "";
+    StringConstant["build"] = "build";
+    StringConstant["vamtiger"] = "vamtiger";
+    StringConstant["slash"] = "/";
+    StringConstant["jsExtension"] = ".js";
+    StringConstant["bashAnd"] = "&&";
+    StringConstant["arn"] = "arn";
+    StringConstant["sns"] = "sns";
+    StringConstant["aws"] = "aws";
+    StringConstant["colon"] = ":";
+    StringConstant["hyphen"] = "-";
+    StringConstant["vamtiger-contact"] = "vamtiger-contact";
+    StringConstant["5e5164d3"] = "5e5164d3";
+    StringConstant["cc71"] = "cc71";
+    StringConstant["4e5b"] = "4e5b";
+    StringConstant["9c34"] = "9c34";
+    StringConstant["042fe735f31c"] = "042fe735f31c";
+})(StringConstant || (StringConstant = {}));
+var Region;
+(function (Region) {
+    Region["usWest2"] = "us-west-2";
+})(Region || (Region = {}));
+var ElmentName;
+(function (ElmentName) {
+    ElmentName["meta"] = "meta";
+    ElmentName["script"] = "script";
+})(ElmentName || (ElmentName = {}));
+var ElementId;
+(function (ElementId) {
+    ElementId["vamtigerBrowserSupport"] = "vamtiger-browser-support";
+})(ElementId || (ElementId = {}));
+var ElementAttribute;
+(function (ElementAttribute) {
+    ElementAttribute["id"] = "id";
+})(ElementAttribute || (ElementAttribute = {}));
+var MetaElementAttribute;
+(function (MetaElementAttribute) {
+    MetaElementAttribute["baseUrl"] = "baseUrl";
+    MetaElementAttribute["name"] = "name";
+    MetaElementAttribute["url"] = "url";
+    MetaElementAttribute["primary"] = "primary";
+    MetaElementAttribute["loaded"] = "loaded";
+    MetaElementAttribute["supported"] = "supported";
+    MetaElementAttribute["unsupported"] = "unsupported";
+    MetaElementAttribute["error"] = "error";
+    MetaElementAttribute["polyfill"] = "polyfill";
+    MetaElementAttribute["loadCritical"] = "loadCritical";
+    MetaElementAttribute["load"] = "load";
+    MetaElementAttribute["wait"] = "wait";
+})(MetaElementAttribute || (MetaElementAttribute = {}));
+var MetaElementBrowserSupportAttribute;
+(function (MetaElementBrowserSupportAttribute) {
+    MetaElementBrowserSupportAttribute["botSupport"] = "data-bot-support";
+    MetaElementBrowserSupportAttribute["es2015Support"] = "data-es2015-support";
+    MetaElementBrowserSupportAttribute["elementQuerySupport"] = "data-element-query-support";
+    MetaElementBrowserSupportAttribute["webComponentSupport"] = "data-web-component-support";
+    MetaElementBrowserSupportAttribute["fetchSupport"] = "data-fetch-support";
+    MetaElementBrowserSupportAttribute["awsSupport"] = "data-aws-support";
+    MetaElementBrowserSupportAttribute["contactSupport"] = "data-contact-support";
+})(MetaElementBrowserSupportAttribute || (MetaElementBrowserSupportAttribute = {}));
+var Selector;
+(function (Selector) {
+    Selector["vamtigerBrowserSupportScript"] = "script[src*=\"vamtiger-browser-support\"]";
+    Selector["vamtigerBrowserMethodJsonJs"] = "[src$=\"vamtiger-browser-method.js.json.js\"]";
+    Selector["vamtigerBrowserMethodJson"] = "[data-name$=\"vamtiger-browser-method.js.json\"]";
+})(Selector || (Selector = {}));
+var ScriptUrl;
+(function (ScriptUrl) {
+    ScriptUrl["vamtigerBrowserMethod"] = "https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js";
+    ScriptUrl["vamtigerBrowserMethodJsonJs"] = "https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js";
+})(ScriptUrl || (ScriptUrl = {}));
+var ErrorMessage;
+(function (ErrorMessage) {
+    ErrorMessage["notBrowser"] = "This is not a web browser";
+    ErrorMessage["noFormForSelector"] = "No Form for Selector";
+    ErrorMessage["noFieldInFormForSelector"] = "No Field in Form for Selector";
+})(ErrorMessage || (ErrorMessage = {}));
+var NpmScript;
+(function (NpmScript) {
+    NpmScript["bundleSource"] = "bundle-source";
+})(NpmScript || (NpmScript = {}));
+var SupportType;
+(function (SupportType) {
+    SupportType["primary"] = "primary";
+    SupportType["secondary"] = "secondary";
+})(SupportType || (SupportType = {}));
+var LoadOnComplete;
+(function (LoadOnComplete) {
+    LoadOnComplete["loadCritical"] = "loadCritical";
+    LoadOnComplete["load"] = "load";
+})(LoadOnComplete || (LoadOnComplete = {}));
+var VamtigerFormDataSupportFormFieldValue;
+(function (VamtigerFormDataSupportFormFieldValue) {
+    VamtigerFormDataSupportFormFieldValue["innerHTML"] = "innerHTML";
+})(VamtigerFormDataSupportFormFieldValue || (VamtigerFormDataSupportFormFieldValue = {}));
+var DocumentDataAttribute;
+(function (DocumentDataAttribute) {
+    DocumentDataAttribute["touchSupport"] = "vamtigerTouchSupport";
+})(DocumentDataAttribute || (DocumentDataAttribute = {}));
+var SupportFile;
+(function (SupportFile) {
+    SupportFile["elementQuery"] = "vamtiger-element-query-support";
+})(SupportFile || (SupportFile = {}));
+var Polyfill;
+(function (Polyfill) {
+    Polyfill["elementQuery"] = "https://cdn.jsdelivr.net/npm/eqcss@latest/EQCSS.min.js";
+})(Polyfill || (Polyfill = {}));
+var regex = {
+    leadingData: /^data/,
+    trailingSupport: /(.*?Support)(Primary)?$/,
+    supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
+    distTag: /(\d|latest)$/,
+    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
+};
+var stringConstant = Object.assign(StringConstant, {
+    365080655670: 365080655670
+});
+var selector = {
+    vamtigerBrowserMethod: "script[src=\"" + ScriptUrl.vamtigerBrowserMethod + "\"]"
+};
+
+var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension;
+var leadingData = regex.leadingData;
+var supportKeys = Object.keys(MetaElementBrowserSupportAttribute);
+var supportScript = Object.assign({}, MetaElementBrowserSupportAttribute);
+var loadSupport = {
+    parallel: new Set([
+        SupportType.primary,
+        SupportType.secondary
+    ]),
+    series: new Set([])
+};
+var supportDone = Array.from(new Set([
+    MetaElementAttribute.supported,
+    MetaElementAttribute.unsupported
+]));
+var vc = gvc();
+supportKeys.forEach(function (key) { return supportScript[key] = supportScript[key].replace(leadingData, vamtiger) + jsExtension; });
+function gvc() {
+    var a = stringConstant.arn, b = stringConstant.aws, c = stringConstant.sns, e = stringConstant["365080655670"], f = stringConstant["vamtiger-contact"], g = stringConstant.colon, h = stringConstant["5e5164d3"], i = stringConstant.cc71, j = stringConstant["4e5b"], k = stringConstant["9c34"], l = stringConstant["042fe735f31c"], m = stringConstant.hyphen;
+    var d = Region.usWest2;
+    var z = [
+        a,
+        b,
+        c,
+        d,
+        e,
+        f
+    ].join(g);
+    var x = [
+        d,
+        [
+            h,
+            i,
+            j,
+            k,
+            l
+        ].join(m)
+    ].join(g);
+    var y = {
+        z: Array.from(z),
+        x: Array.from(x),
+        y: Array.from(d)
+    };
+    return y;
+}
+
+var AWS = window.AWS, gvc$1 = window._VamtigerContact_, VamtigerContact = window.VamtigerContact;
+var config = AWS.config, SNS = AWS.SNS, Credentials = AWS.CognitoIdentityCredentials;
+var origin = location.origin, href = location.href;
+var stringify = JSON.stringify;
+var _a = gvc$1(vc), x = _a.x, y = _a.y, z = _a.z;
+var Subject = "Vamtiger contact: " + href;
+var region = y;
+var credentials = new Credentials({
+    IdentityPoolId: x
+});
+Object.assign(config, { region: region, credentials: credentials });
+var sns = new SNS();
+function vamtigerContact(_a, resolve, reject) {
+    var subject = _a.subject, template = _a.template;
+    var Message = stringify({
+        subject: subject,
+        template: template,
+        origin: href
+    });
+    var params = {
+        Message: Message,
+        Subject: Subject,
+        TopicArn: z
+    };
+    sns.publish(params, function (error, response) { return error ? reject(error) : resolve(response); });
+}
+if (!VamtigerContact) {
+    window.VamtigerContact = function (params) { return new Promise(function (resolve, reject) { return vamtigerContact(params, resolve, reject); }); };
+}
+
+}());
 //# sourceMappingURL=vamtiger-contact-polyfill.js.map

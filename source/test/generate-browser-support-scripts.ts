@@ -28,7 +28,7 @@ let bundleSourceScript: string;
 describe('Generate Browser', function () {
     before(async function () {
         sourceFiles = await getFolderContent(sourceFolder);
-        
+
         supportScripts = sourceFiles.filter(sourceFile => sourceFile.match(supportScript));
 
         bundleSourceScript = supportScripts
@@ -40,7 +40,7 @@ describe('Generate Browser', function () {
         sortScripts();
 
         formattedPackageJson = format(
-            stringify(packageJson), 
+            stringify(packageJson),
             jsonFormatConfig
         );
     });
@@ -48,7 +48,7 @@ describe('Generate Browser', function () {
     it('Support Scripts', test)
 });
 
-async function test() { 
+async function test() {
     expect(packageJson.scripts[bundleSource]).to.equal(bundleSourceScript);
 
     await createFile(packageJsonPath, formattedPackageJson);
@@ -56,7 +56,7 @@ async function test() {
 
 function getBundleSourceScript(supportScript: string) {
     const { base: sourceFile, name: fileName, ext: sourceExtension } = parse(supportScript);
-    const currentBundleSourceScript = `vamtiger-bundle-typescript --relativePath --entryFilePath source/${sourceFile} --bundleFilePath build/${fileName}${jsExtension} --format iife --sourcemap true --copySourceMap --minify`;
+    const currentBundleSourceScript = `vamtiger-bundle-typescript --relativePath --entryFilePath source/${sourceFile} --bundleFilePath build/${fileName}${jsExtension} --format iife --sourcemap true --copySourceMap`;
 
     return currentBundleSourceScript;
 }
