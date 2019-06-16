@@ -31,7 +31,11 @@ export default function () {
 
     metaElement.setAttribute(id, vamtigerBrowserSupport);
 
-    vamtigerBrowserSupportScript && Object.assign(metaElement.dataset,vamtigerBrowserSupportScript.dataset);
+    vamtigerBrowserSupportScript && Object.keys(vamtigerBrowserSupportScript.dataset).forEach(key => {
+        if (!metaElement.dataset[key]) {
+            metaElement.dataset[key] = vamtigerBrowserSupportScript.dataset[key];
+        }
+    });
 
     metaElement.dataset[baseUrl] = baseUrlPath;
 

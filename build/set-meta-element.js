@@ -20,7 +20,11 @@ function default_1() {
         && vamtigerBrowserSupportScript.src + "/build"
         || Array.from(baseUrlPaths).join(slash);
     metaElement.setAttribute(id, vamtigerBrowserSupport);
-    vamtigerBrowserSupportScript && Object.assign(metaElement.dataset, vamtigerBrowserSupportScript.dataset);
+    vamtigerBrowserSupportScript && Object.keys(vamtigerBrowserSupportScript.dataset).forEach(function (key) {
+        if (!metaElement.dataset[key]) {
+            metaElement.dataset[key] = vamtigerBrowserSupportScript.dataset[key];
+        }
+    });
     metaElement.dataset[baseUrl] = baseUrlPath;
     head.insertBefore(metaElement, firstChild);
 }

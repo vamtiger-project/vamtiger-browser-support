@@ -25,7 +25,9 @@ export const primarySupport = new Set<string>([
     'es2015Support'
 ]);
 
-export const supportScript: StringObject = Object.assign({} as StringObject, MetaElementBrowserSupportAttribute);
+export const supportScript: StringObject = {
+    ...MetaElementBrowserSupportAttribute
+};
 
 export const loadSupport = {
     parallel: new Set([

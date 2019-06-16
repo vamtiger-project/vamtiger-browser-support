@@ -1,4 +1,8 @@
-import { IVamtigerContactParams, VamtigerContactResolve, VamtigerContactReject } from './types';
+import {
+    IVamtigerContactParams,
+    VamtigerContactResolve,
+    VamtigerContactReject
+} from './types';
 import { vc } from './config';
 
 const { AWS, _VamtigerContact_: gvc, VamtigerContact } = window;
@@ -12,7 +16,10 @@ const credentials = new Credentials({
     IdentityPoolId: x
 });
 
-Object.assign(config, { region, credentials });
+AWS.config = {
+    ...config,
+    ...{ region, credentials }
+} as any;
 
 const sns = new SNS();
 

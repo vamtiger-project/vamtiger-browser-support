@@ -137,7 +137,7 @@ var selector = {
 var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension;
 var leadingData = regex.leadingData;
 var supportKeys = Object.keys(MetaElementBrowserSupportAttribute);
-var supportScript = Object.assign({}, MetaElementBrowserSupportAttribute);
+var supportScript = __assign({}, MetaElementBrowserSupportAttribute);
 var loadSupport = {
     parallel: new Set([
         SupportType.primary,
@@ -190,7 +190,7 @@ var region = y;
 var credentials = new Credentials({
     IdentityPoolId: x
 });
-Object.assign(config, { region: region, credentials: credentials });
+AWS.config = __assign({}, config, { region: region, credentials: credentials });
 var sns = new SNS();
 function vamtigerContact(_a, resolve, reject) {
     var subject = _a.subject, template = _a.template;

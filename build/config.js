@@ -11,7 +11,7 @@ exports.primarySupport = new Set([
     'botSupport',
     'es2015Support'
 ]);
-exports.supportScript = Object.assign({}, types_1.MetaElementBrowserSupportAttribute);
+exports.supportScript = __assign({}, types_1.MetaElementBrowserSupportAttribute);
 exports.loadSupport = {
     parallel: new Set([
         types_1.SupportType.primary,
