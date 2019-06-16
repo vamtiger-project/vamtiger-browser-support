@@ -148,6 +148,10 @@ var params = {
 if (!params.supported) {
     params.polyfillChain = polyfillChain;
 }
+console.log({
+    Object: Object,
+    assign: Object && Object.assign
+});
 VamtigerBrowserSupport(params);
 
 exports.supportFile = supportFile;
