@@ -19,11 +19,11 @@ exports.loadSupport = {
     ]),
     series: new Set([])
 };
-exports.supportDone = Array.from(new Set([
+exports.supportDone = [
     types_1.MetaElementAttribute.supported,
     types_1.MetaElementAttribute.unsupported
-]));
-exports.loadOnComplete = Array.from(new Set(Object.keys(types_1.LoadOnComplete)));
+];
+exports.loadOnComplete = Object.keys(types_1.LoadOnComplete);
 exports.jsonFormatConfig = {
     format: 'json'
 };

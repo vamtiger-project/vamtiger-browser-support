@@ -418,11 +418,11 @@ var loadSupport = {
     ]),
     series: new Set([])
 };
-var supportDone = Array.from(new Set([
+var supportDone = [
     MetaElementAttribute.supported,
     MetaElementAttribute.unsupported
-]));
-var loadOnComplete = Array.from(new Set(Object.keys(LoadOnComplete)));
+];
+var loadOnComplete = Object.keys(LoadOnComplete);
 var vc = gvc();
 supportKeys.forEach(function (key) { return supportScript[key] = supportScript[key].replace(leadingData, vamtiger) + jsExtension; });
 function gvc() {

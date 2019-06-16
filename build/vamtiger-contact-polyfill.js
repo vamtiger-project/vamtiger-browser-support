@@ -145,10 +145,10 @@ var loadSupport = {
     ]),
     series: new Set([])
 };
-var supportDone = Array.from(new Set([
+var supportDone = [
     MetaElementAttribute.supported,
     MetaElementAttribute.unsupported
-]));
+];
 var vc = gvc();
 supportKeys.forEach(function (key) { return supportScript[key] = supportScript[key].replace(leadingData, vamtiger) + jsExtension; });
 function gvc() {

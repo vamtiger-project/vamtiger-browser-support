@@ -39,14 +39,12 @@ export const loadSupport = {
     ])
 };
 
-export const supportDone = Array.from(new Set([
+export const supportDone = [
     MetaElementAttribute.supported,
     MetaElementAttribute.unsupported
-]));
+];
 
-export const loadOnComplete = Array.from(new Set(
-    Object.keys(LoadOnComplete) as LoadOnCompleteType[]
-))
+export const loadOnComplete = Object.keys(LoadOnComplete) as LoadOnCompleteType[];
 
 export const jsonFormatConfig = {
     format: 'json'
