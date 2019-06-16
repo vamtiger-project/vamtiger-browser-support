@@ -135,12 +135,9 @@ var VamtigerBrowserSupport = window.VamtigerBrowserSupport;
 var supportFile = 'vamtiger-bot-support';
 var polyfillChain = [
     [
+        'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign-auto.min.js',
         'https://cdn.jsdelivr.net/npm/babel-polyfill@latest/dist/polyfill.min.js',
         'https://cdn.jsdelivr.net/npm/@babel/standalone@latest/babel.min.js'
-    ],
-    [
-        'https://cdn.jsdelivr.net/npm/es5-shim@latest/es5-shim.min.js',
-        'https://cdn.jsdelivr.net/npm/es6-shim@latest/es6-shim.min.js'
     ]
 ];
 var params = {
