@@ -70,8 +70,8 @@ var Selector;
 })(Selector = exports.Selector || (exports.Selector = {}));
 var ScriptUrl;
 (function (ScriptUrl) {
-    ScriptUrl["vamtigerBrowserMethod"] = "https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js";
-    ScriptUrl["vamtigerBrowserMethodJsonJs"] = "https://cdn.jsdelivr.net/npm/vamtiger-browser-method@latest/build/vamtiger-browser-method.js.json.js";
+    ScriptUrl["vamtigerBrowserMethod"] = "https://vamtiger-project.github.io/vamtiger-browser-method/build/vamtiger-browser-method.js";
+    ScriptUrl["vamtigerBrowserMethodJsonJs"] = "https://vamtiger-project.github.io/vamtiger-browser-method/build/vamtiger-browser-method.js.json.js";
 })(ScriptUrl = exports.ScriptUrl || (exports.ScriptUrl = {}));
 var ErrorMessage;
 (function (ErrorMessage) {
