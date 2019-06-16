@@ -20,7 +20,7 @@ export default async function() {
 async function loadBotDependencies() {
     const urlsGroups = isBot() && botDependencies || [];
 
-    await Promise.all(urlsGroups.map(urls => Promise.all(urls.map(loadDependency))));
+    await Promise.all(urlsGroups.map(urls => Promise.all(urls.map(url => loadDependency(url).catch(handleError)))));
 }
 
 async function loadDependencies() {
@@ -72,3 +72,9 @@ function loanVamtigerBrowserMethod() {return new Promise(async (resolve, reject)
 
     resolve();
 })}
+
+function handleError(error: Error) {
+    console.warn(error.name);
+    console.warn(error.message);
+    console.warn(error.stack);
+}

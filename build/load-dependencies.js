@@ -27,7 +27,7 @@ function loadBotDependencies() {
             switch (_a.label) {
                 case 0:
                     urlsGroups = is_bot_1.default() && config_1.botDependencies || [];
-                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(loadDependency)); }))];
+                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(function (url) { return loadDependency(url).catch(handleError); })); }))];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -96,5 +96,10 @@ function loanVamtigerBrowserMethod() {
             return [2 /*return*/];
         });
     }); });
+}
+function handleError(error) {
+    console.warn(error.name);
+    console.warn(error.message);
+    console.warn(error.stack);
 }
 //# sourceMappingURL=load-dependencies.js.map

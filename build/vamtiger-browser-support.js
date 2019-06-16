@@ -711,7 +711,7 @@ function loadBotDependencies() {
             switch (_a.label) {
                 case 0:
                     urlsGroups = isBot() && botDependencies || [];
-                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(loadDependency)); }))];
+                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(function (url) { return loadDependency(url).catch(handleError); })); }))];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -781,6 +781,11 @@ function loanVamtigerBrowserMethod() {
         });
     }); });
 }
+function handleError(error) {
+    console.warn(error.name);
+    console.warn(error.message);
+    console.warn(error.stack);
+}
 
 var nothing$4 = StringConstant.nothing;
 function setBrowserData () {
@@ -814,14 +819,14 @@ function handleLoad(event) {
                     _a.sent();
                     setMetaElement();
                     setBrowserSupportMetaElements();
-                    loadSupport$1().catch(handleError);
+                    loadSupport$1().catch(handleError$1);
                     setBrowserData();
                     return [2 /*return*/];
             }
         });
     });
 }
-function handleError(error) {
+function handleError$1(error) {
     console.warn(error);
     console.warn(notBrowser);
 }
