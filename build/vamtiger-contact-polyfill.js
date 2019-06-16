@@ -134,7 +134,7 @@ var selector = {
     vamtigerBrowserMethod: "script[src=\"" + ScriptUrl.vamtigerBrowserMethod + "\"]"
 };
 
-var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension;
+var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension, nothing = StringConstant.nothing;
 var leadingData = regex.leadingData;
 var supportKeys = Object.keys(MetaElementBrowserSupportAttribute);
 var supportScript = __assign({}, MetaElementBrowserSupportAttribute);
@@ -173,9 +173,9 @@ function gvc() {
         ].join(m)
     ].join(g);
     var y = {
-        z: Array.from(z),
-        x: Array.from(x),
-        y: Array.from(d)
+        z: z.split(nothing),
+        x: x.split(nothing),
+        y: d.split(nothing)
     };
     return y;
 }

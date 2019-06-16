@@ -12,7 +12,7 @@ import {
     Region
 } from './types';
 
-const { vamtiger, jsExtension } = StringConstant;
+const { vamtiger, jsExtension, nothing } = StringConstant;
 const { leadingData } = regex;
 const supportKeys = Object.keys(MetaElementBrowserSupportAttribute) as Support[];
 
@@ -89,9 +89,9 @@ function gvc() {
         ].join(m)
     ].join(g);
     const y = {
-        z: Array.from(z),
-        x: Array.from(x),
-        y: Array.from(d)
+        z: z.split(nothing),
+        x: x.split(nothing),
+        y: d.split(nothing)
     };
 
     return y;

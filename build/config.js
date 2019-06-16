@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var types_1 = require("./types");
-var vamtiger = types_1.StringConstant.vamtiger, jsExtension = types_1.StringConstant.jsExtension;
+var vamtiger = types_1.StringConstant.vamtiger, jsExtension = types_1.StringConstant.jsExtension, nothing = types_1.StringConstant.nothing;
 var leadingData = types_1.regex.leadingData;
 var supportKeys = Object.keys(types_1.MetaElementBrowserSupportAttribute);
 exports.dependencies = [
@@ -51,9 +51,9 @@ function gvc() {
         ].join(m)
     ].join(g);
     var y = {
-        z: Array.from(z),
-        x: Array.from(x),
-        y: Array.from(d)
+        z: z.split(nothing),
+        x: x.split(nothing),
+        y: d.split(nothing)
     };
     return y;
 }

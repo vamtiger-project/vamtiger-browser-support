@@ -400,7 +400,7 @@ var selector = {
     vamtigerBrowserMethod: "script[src=\"" + ScriptUrl.vamtigerBrowserMethod + "\"]"
 };
 
-var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension;
+var vamtiger = StringConstant.vamtiger, jsExtension = StringConstant.jsExtension, nothing = StringConstant.nothing;
 var leadingData = regex.leadingData;
 var supportKeys = Object.keys(MetaElementBrowserSupportAttribute);
 var dependencies = [
@@ -447,9 +447,9 @@ function gvc() {
         ].join(m)
     ].join(g);
     var y = {
-        z: Array.from(z),
-        x: Array.from(x),
-        y: Array.from(d)
+        z: z.split(nothing),
+        x: x.split(nothing),
+        y: d.split(nothing)
     };
     return y;
 }
@@ -540,7 +540,7 @@ function loadNextSupport (_a) {
 }
 
 var vamtigerBrowserSupportId$3 = ElementId.vamtigerBrowserSupport;
-var nothing = StringConstant.nothing;
+var nothing$1 = StringConstant.nothing;
 var supportTypes$1 = Object.keys(SupportType);
 function updateBrowserSupport(_a) {
     var supportFile = _a.supportFile, supported = _a.supported, polyfill = _a.polyfill, polyfills = _a.polyfills, polyfillChain = _a.polyfillChain, error = _a.error, wait = _a.wait;
@@ -554,13 +554,13 @@ function updateBrowserSupport(_a) {
             data = metaElement.dataset;
             supportType = supportTypes$1.find(function (supportType) { return data.hasOwnProperty(supportType); });
             if (supported) {
-                data.supported = nothing;
+                data.supported = nothing$1;
             }
             else {
-                data.unsupported = nothing;
+                data.unsupported = nothing$1;
             }
             if (wait) {
-                data.wait = nothing;
+                data.wait = nothing$1;
             }
             else {
                 delete data.wait;
@@ -604,7 +604,7 @@ var id = ElementAttribute.id;
 var vamtigerBrowserSupport = ElementId.vamtigerBrowserSupport;
 var baseUrl = MetaElementAttribute.baseUrl;
 var es2015Support = MetaElementBrowserSupportAttribute.es2015Support;
-var nothing$1 = StringConstant.nothing, slash = StringConstant.slash, build = StringConstant.build;
+var nothing$2 = StringConstant.nothing, slash = StringConstant.slash, build = StringConstant.build;
 var selector$1 = Selector.vamtigerBrowserSupportScript;
 var distTag = regex.distTag;
 function setMetaElement () {
@@ -629,7 +629,7 @@ function setMetaElement () {
 }
 
 var vamtigerBrowserSupportId$4 = ElementId.vamtigerBrowserSupport;
-var slash$1 = StringConstant.slash, nothing$2 = StringConstant.nothing;
+var slash$1 = StringConstant.slash, nothing$3 = StringConstant.nothing;
 var meta = ElmentName.meta;
 var trailingSupport = regex.trailingSupport;
 function setBrowserSupportMetaElement (_a) {
@@ -647,10 +647,10 @@ function setBrowserSupportMetaElement (_a) {
     metaElement.dataset.name = support;
     metaElement.dataset.url = scriptUrl;
     if (supportType) {
-        metaElement.dataset[supportType.toLowerCase()] = nothing$2;
+        metaElement.dataset[supportType.toLowerCase()] = nothing$3;
     }
     else {
-        metaElement.dataset[SupportType.secondary] = nothing$2;
+        metaElement.dataset[SupportType.secondary] = nothing$3;
     }
     vamtigerBrowserSupport.appendChild(metaElement);
 }
@@ -741,7 +741,7 @@ function loanVamtigerBrowserMethod() {
     }); });
 }
 
-var nothing$3 = StringConstant.nothing;
+var nothing$4 = StringConstant.nothing;
 function setBrowserData () {
     return __awaiter$1(this, void 0, void 0, function () {
         var ontouchstart, document, body, dataset, maxTouchPoints, msMaxTouchPoints, touchSupport;
@@ -755,7 +755,7 @@ function setBrowserData () {
                 || maxTouchPoints
                 || msMaxTouchPoints) ? true : false;
             if (touchSupport) {
-                dataset[DocumentDataAttribute.touchSupport] = nothing$3;
+                dataset[DocumentDataAttribute.touchSupport] = nothing$4;
             }
             return [2 /*return*/];
         });
