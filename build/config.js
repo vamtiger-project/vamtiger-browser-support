@@ -4,7 +4,9 @@ var types_1 = require("./types");
 var vamtiger = types_1.StringConstant.vamtiger, jsExtension = types_1.StringConstant.jsExtension;
 var leadingData = types_1.regex.leadingData;
 var supportKeys = Object.keys(types_1.MetaElementBrowserSupportAttribute);
-exports.dependencies = [];
+exports.dependencies = [
+    'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign-auto.min.js'
+];
 exports.primarySupport = new Set([
     'botSupport',
     'es2015Support'
