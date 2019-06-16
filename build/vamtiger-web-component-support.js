@@ -1,6 +1,18 @@
 var index = (function (exports) {
 'use strict';
 
+const __assign = Object.assign || function (target) {
+    for (var source, i = 1; i < arguments.length; i++) {
+        source = arguments[i];
+        for (var prop in source) {
+            if (Object.prototype.hasOwnProperty.call(source, prop)) {
+                target[prop] = source[prop];
+            }
+        }
+    }
+    return target;
+};
+
 var StringConstant;
 (function (StringConstant) {
     StringConstant["nothing"] = "";
@@ -110,9 +122,7 @@ var Polyfill;
 (function (Polyfill) {
     Polyfill["elementQuery"] = "https://cdn.jsdelivr.net/npm/eqcss@latest/EQCSS.min.js";
 })(Polyfill || (Polyfill = {}));
-var stringConstant = Object.assign(StringConstant, {
-    365080655670: 365080655670
-});
+var stringConstant = __assign({}, StringConstant, { 365080655670: 365080655670 });
 var selector = {
     vamtigerBrowserMethod: "script[src=\"" + ScriptUrl.vamtigerBrowserMethod + "\"]"
 };

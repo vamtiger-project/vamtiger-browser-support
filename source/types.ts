@@ -197,9 +197,10 @@ export const regex = {
     bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
 }
 
-export const stringConstant = Object.assign(StringConstant, {
+export const stringConstant = {
+    ...StringConstant,
     365080655670: 365080655670
-});
+};
 
 export const selector = {
     vamtigerBrowserMethod: `script[src="${ScriptUrl.vamtigerBrowserMethod}"]`

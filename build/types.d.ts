@@ -161,8 +161,25 @@ export declare const regex: {
     distTag: RegExp;
     bot: RegExp;
 };
-export declare const stringConstant: typeof StringConstant & {
+export declare const stringConstant: {
     365080655670: number;
+    nothing: StringConstant.nothing;
+    build: StringConstant.build;
+    vamtiger: StringConstant.vamtiger;
+    slash: StringConstant.slash;
+    jsExtension: StringConstant.jsExtension;
+    bashAnd: StringConstant.bashAnd;
+    arn: StringConstant.arn;
+    sns: StringConstant.sns;
+    aws: StringConstant.aws;
+    colon: StringConstant.colon;
+    hyphen: StringConstant.hyphen;
+    'vamtiger-contact': StringConstant.vamtiger-contact;
+    '5e5164d3': StringConstant.5e5164d3;
+    cc71: StringConstant.cc71;
+    '4e5b': StringConstant.4e5b;
+    '9c34': StringConstant.9c34;
+    '042fe735f31c': StringConstant.042fe735f31c;
 };
 export declare const selector: {
     vamtigerBrowserMethod: string;

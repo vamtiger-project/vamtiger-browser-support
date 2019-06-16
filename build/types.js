@@ -117,9 +117,7 @@ exports.regex = {
     distTag: /(\d|latest)$/,
     bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
 };
-exports.stringConstant = Object.assign(StringConstant, {
-    365080655670: 365080655670
-});
+exports.stringConstant = __assign({}, StringConstant, { 365080655670: 365080655670 });
 exports.selector = {
     vamtigerBrowserMethod: "script[src=\"" + ScriptUrl.vamtigerBrowserMethod + "\"]"
 };
