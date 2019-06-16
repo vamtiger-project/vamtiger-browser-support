@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.44.0",
+    "version": "0.45.0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
