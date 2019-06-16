@@ -16,6 +16,8 @@ const { vamtiger, jsExtension, nothing } = StringConstant;
 const { leadingData } = regex;
 const supportKeys = Object.keys(MetaElementBrowserSupportAttribute) as Support[];
 
+export const transpileJs = true;
+
 export const dependencies = [
     'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign-auto.min.js'
 ] as string[];

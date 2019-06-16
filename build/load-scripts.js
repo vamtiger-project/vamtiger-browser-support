@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var config_1 = require("./config");
 var types_1 = require("./types");
+var config_1 = require("./config");
 var vamtigerBrowserSupportId = types_1.ElementId.vamtigerBrowserSupport;
 function default_1() {
     return __awaiter(this, void 0, void 0, function () {
@@ -15,7 +15,7 @@ function default_1() {
                 .map(function (key) { return vamtigerBrowserSupport.dataset[key]; })
                 .filter(function (url) { return url; });
             loadScripts = supportUrls.reduce(function (loadSupport, src) { return loadSupport
-                .then(function () { return loadScript({ src: src }); })
+                .then(function () { return loadScript({ src: src, transpileJs: config_1.transpileJs }); })
                 .then(function (script) { return scripts.push(script) && scripts; }); }, Promise.resolve(scripts));
             return [2 /*return*/, loadScripts];
         });

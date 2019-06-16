@@ -1,4 +1,5 @@
 import { MetaElementAttribute, StringObject, SupportType } from './types';
+export declare const transpileJs = true;
 export declare const dependencies: string[];
 export declare const botDependencies: string[][];
 export declare const primarySupport: Set<string>;

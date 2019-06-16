@@ -4,6 +4,7 @@ var types_1 = require("./types");
 var vamtiger = types_1.StringConstant.vamtiger, jsExtension = types_1.StringConstant.jsExtension, nothing = types_1.StringConstant.nothing;
 var leadingData = types_1.regex.leadingData;
 var supportKeys = Object.keys(types_1.MetaElementBrowserSupportAttribute);
+exports.transpileJs = true;
 exports.dependencies = [
     'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign-auto.min.js'
 ];
