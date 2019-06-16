@@ -406,6 +406,17 @@ var supportKeys = Object.keys(MetaElementBrowserSupportAttribute);
 var dependencies = [
     'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign-auto.min.js'
 ];
+var botDependencies = [
+    [
+        'https://cdn.jsdelivr.net/npm/es5-shim@latest/es5-shim.min.js',
+        'https://cdn.jsdelivr.net/npm/es6-shim@latest/es6-shim.min.js',
+        'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign.min.js'
+    ],
+    [
+        'https://cdn.jsdelivr.net/npm/babel-polyfill@latest/dist/polyfill.min.js',
+        'https://cdn.jsdelivr.net/npm/@babel/standalone@latest/babel.min.js'
+    ]
+];
 var primarySupport = new Set([
     'botSupport',
     'es2015Support'
@@ -679,6 +690,36 @@ function isBot () {
 
 var parse = JSON.parse;
 function loadDependencies () {
+    return __awaiter$1(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadBotDependencies()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, loadDependencies$1()];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function loadBotDependencies() {
+    return __awaiter$1(this, void 0, void 0, function () {
+        var urlsGroups;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    urlsGroups = isBot() && botDependencies || [];
+                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(loadDependency)); }))];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function loadDependencies$1() {
     return __awaiter$1(this, void 0, void 0, function () {
         var urls, dependencies$$1;
         return __generator(this, function (_a) {

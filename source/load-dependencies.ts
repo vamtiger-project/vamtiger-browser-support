@@ -6,12 +6,24 @@ import {
 } from './types';
 import {
     dependencies as dependencyUrls,
+    botDependencies
 } from './config';
 import isBot from './is-bot';
 
 const { parse } = JSON;
 
-export default async function () {
+export default async function() {
+    await loadBotDependencies();
+    await loadDependencies();
+}
+
+async function loadBotDependencies() {
+    const urlsGroups = isBot() && botDependencies || [];
+
+    await Promise.all(urlsGroups.map(urls => Promise.all(urls.map(loadDependency))));
+}
+
+async function loadDependencies() {
     const urls = ([isBot() && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs] as string [])
         .concat(dependencyUrls)
         .filter(url => url);

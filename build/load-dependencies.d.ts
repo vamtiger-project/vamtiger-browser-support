@@ -1,1 +1,1 @@
-export default function (): Promise<HTMLScriptElement[]>;
+export default function (): Promise<void>;

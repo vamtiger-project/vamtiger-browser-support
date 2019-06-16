@@ -6,6 +6,37 @@ var is_bot_1 = require("./is-bot");
 var parse = JSON.parse;
 function default_1() {
     return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadBotDependencies()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, loadDependencies()];
+                case 2:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.default = default_1;
+function loadBotDependencies() {
+    return __awaiter(this, void 0, void 0, function () {
+        var urlsGroups;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    urlsGroups = is_bot_1.default() && config_1.botDependencies || [];
+                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(loadDependency)); }))];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function loadDependencies() {
+    return __awaiter(this, void 0, void 0, function () {
         var urls, dependencies;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -24,7 +55,6 @@ function default_1() {
         });
     });
 }
-exports.default = default_1;
 function loadDependency(src) {
     return new Promise(function (resolve, reject) {
         var head = document.head;
