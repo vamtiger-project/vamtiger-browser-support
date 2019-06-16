@@ -54,6 +54,7 @@ export enum MetaElementAttribute {
 }
 
 export enum MetaElementBrowserSupportAttribute {
+    botSupport = 'data-bot-support',
     es2015Support = 'data-es2015-support',
     elementQuerySupport = 'data-element-query-support',
     webComponentSupport = 'data-web-component-support',

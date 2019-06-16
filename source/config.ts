@@ -19,6 +19,7 @@ const supportKeys = Object.keys(MetaElementBrowserSupportAttribute) as Support[]
 export const dependencies = [] as string[];
 
 export const primarySupport = new Set<string>([
+    'botSupport',
     'es2015Support'
 ]);
 

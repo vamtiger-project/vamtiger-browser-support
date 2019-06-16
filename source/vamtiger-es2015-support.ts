@@ -1,5 +1,3 @@
-import isBot from './is-bot';
-
 const supportFile = 'vamtiger-es2015-support';
 const polyfill = 'https://cdn.jsdelivr.net/npm/babel-polyfill@latest/dist/polyfill.min.js';
 const test = `
@@ -27,7 +25,6 @@ window[supportFile] = {
 
 export default function main() {
     const { VamtigerBrowserSupport } = window;
-    const { userAgent } = navigator
 
     let result: boolean;
 
@@ -36,11 +33,6 @@ export default function main() {
     } catch(error) {
         window[supportFile].supported = false;
         window[supportFile].error = error.message;
-    }
-
-    if (isBot()) {
-        window[supportFile].supported = false;
-        console.log(userAgent);
     }
 
     if (!window[supportFile].supported) {
