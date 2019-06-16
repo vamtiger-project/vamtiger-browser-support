@@ -1,27 +1,2 @@
-(function () {
-'use strict';
-
-const __assign = Object.assign || function (target) {
-    for (var source, i = 1; i < arguments.length; i++) {
-        source = arguments[i];
-        for (var prop in source) {
-            if (Object.prototype.hasOwnProperty.call(source, prop)) {
-                target[prop] = source[prop];
-            }
-        }
-    }
-    return target;
-};
-
-var _VamtigerContact_ = window._VamtigerContact_;
-var nothing = '';
-if (!_VamtigerContact_) {
-    window._VamtigerContact_ = function (params) { return Object.keys(params)
-        .reduce(function (currentParams, key) {
-        var _a;
-        return (__assign({}, currentParams, (_a = {}, _a[key] = params[key].join(nothing), _a)));
-    }, {}); };
-}
-
-}());
+!function(){"use strict";const t=Object.assign||function(t){for(var n,r=1;r<arguments.length;r++)for(var e in n=arguments[r])Object.prototype.hasOwnProperty.call(n,e)&&(t[e]=n[e]);return t};window._VamtigerContact_||(window._VamtigerContact_=function(n){return Object.keys(n).reduce(function(r,e){var o;return t({},r,((o={})[e]=n[e].join(""),o))},{})})}();
 //# sourceMappingURL=vamtiger-contact-polyfill-support.js.map

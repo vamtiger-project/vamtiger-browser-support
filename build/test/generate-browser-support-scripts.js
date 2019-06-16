@@ -56,7 +56,7 @@ function test() {
 }
 function getBundleSourceScript(supportScript) {
     var _a = path_1.parse(supportScript), sourceFile = _a.base, fileName = _a.name, sourceExtension = _a.ext;
-    var currentBundleSourceScript = "vamtiger-bundle-typescript --relativePath --entryFilePath source/" + sourceFile + " --bundleFilePath build/" + fileName + jsExtension + " --format iife --sourcemap true --copySourceMap";
+    var currentBundleSourceScript = "vamtiger-bundle-typescript --relativePath --entryFilePath source/" + sourceFile + " --bundleFilePath build/" + fileName + jsExtension + " --format iife --sourcemap true --copySourceMap --minify";
     return currentBundleSourceScript;
 }
 function sortScripts() {
