@@ -47,7 +47,7 @@ function loadDependencies() {
                     return [4 /*yield*/, Promise.all(urls.map(loadDependency))];
                 case 1:
                     dependencies = _a.sent();
-                    return [4 /*yield*/, loanVamtigerBrowserMethod()];
+                    return [4 /*yield*/, loadVamtigerBrowserMethod()];
                 case 2:
                     _a.sent();
                     return [2 /*return*/, dependencies];
@@ -75,7 +75,7 @@ function loadDependency(src) {
         }
     });
 }
-function loanVamtigerBrowserMethod() {
+function loadVamtigerBrowserMethod() {
     var _this = this;
     return new Promise(function (resolve, reject) { return __awaiter(_this, void 0, void 0, function () {
         var head, selector, script, jsonText, data, js, vamtigerBrowserMethodScript;

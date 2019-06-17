@@ -29,7 +29,7 @@ async function loadDependencies() {
         .filter(url => url);
     const dependencies = await Promise.all(urls.map(loadDependency));
 
-    await loanVamtigerBrowserMethod();
+    await loadVamtigerBrowserMethod();
 
     return dependencies;
 }
@@ -54,7 +54,7 @@ function loadDependency(src: string) {return new Promise((resolve: (script?: HTM
     }
 })}
 
-function loanVamtigerBrowserMethod() {return new Promise(async (resolve, reject) => {
+function loadVamtigerBrowserMethod() {return new Promise(async (resolve, reject) => {
     const { head } = document;
     const selector = Selector.vamtigerBrowserMethodJson;
     const script = document.querySelector<HTMLScriptElement>(selector);

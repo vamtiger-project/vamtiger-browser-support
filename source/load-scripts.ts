@@ -1,5 +1,5 @@
 import { ElementId } from './types';
-import { loadOnComplete, transpileJs } from './config';
+import { loadOnComplete } from './config';
 
 const { vamtigerBrowserSupport: vamtigerBrowserSupportId } = ElementId;
 
@@ -13,7 +13,7 @@ export default async function () {
         .filter(url => url);
     const loadScripts = supportUrls.reduce(
         (loadSupport, src) => loadSupport
-            .then(() => loadScript({ src, transpileJs }))
+            .then(() => loadScript({ src }))
             .then(script => scripts.push(script) && scripts),
         Promise.resolve(scripts)
     );

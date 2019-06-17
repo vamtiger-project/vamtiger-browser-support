@@ -15,7 +15,7 @@ function default_1() {
                 .map(function (key) { return vamtigerBrowserSupport.dataset[key]; })
                 .filter(function (url) { return url; });
             loadScripts = supportUrls.reduce(function (loadSupport, src) { return loadSupport
-                .then(function () { return loadScript({ src: src, transpileJs: config_1.transpileJs }); })
+                .then(function () { return loadScript({ src: src }); })
                 .then(function (script) { return scripts.push(script) && scripts; }); }, Promise.resolve(scripts));
             return [2 /*return*/, loadScripts];
         });
