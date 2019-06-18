@@ -32,7 +32,7 @@ function objectAssign() {return new Promise((resolve, reject) => {
     let result = false;
 
     try {
-        result = Object.assign({result: false}, {result: true}).result;
+        eval(`Object.assign({result: false}, {result: true}).result`);
     } catch(error) {
         handleError(new Error(objectAssignNotSupported));
     }
@@ -44,7 +44,7 @@ function arrayFrom() {return new Promise((resolve, reject) => {
     let result = false;
 
     try {
-        result = Array.from('1234').length === 4;
+        eval(`Array.from('1234').length === 4`);
     } catch(error) {
         handleError(new Error(arrayFromNotSupported));
     }
@@ -56,10 +56,11 @@ function destructringAssignment() {return new Promise((resolve, reject) => {
     let result = false;
 
     try {
-        eval(`let object = {
-            result: true
-        };
-        let { result: currentResult } = object;
+        eval(`
+            let object = {
+                result: true
+            };
+            let { result: currentResult } = object;
         `);
 
         result = true;
