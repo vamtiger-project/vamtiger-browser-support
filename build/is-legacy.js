@@ -78,13 +78,12 @@ function arrowFunctions() {
             result = true;
         }
         catch (error) {
-            handleError(new Error(destructringAssignmentNotSupported));
+            handleError(new Error(arrowFunctionsNotSupported));
         }
         resolve(result);
     });
 }
 function handleError(error) {
-    console.warn(error.name);
     console.warn(error.message);
 }
 //# sourceMappingURL=is-legacy.js.map

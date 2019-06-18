@@ -78,13 +78,12 @@ function arrowFunctions() {return new Promise((resolve, reject) => {
         eval(`(() => true)()`);
         result = true;
     } catch(error) {
-        handleError(new Error(destructringAssignmentNotSupported));
+        handleError(new Error(arrowFunctionsNotSupported));
     }
 
     resolve(result);
 })}
 
 function handleError(error: Error) {
-    console.warn(error.name);
     console.warn(error.message);
 }
