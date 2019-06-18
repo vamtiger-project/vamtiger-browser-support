@@ -54,14 +54,15 @@ function arrayFrom() {return new Promise((resolve, reject) => {
 
 function destructringAssignment() {return new Promise((resolve, reject) => {
     let result = false;
-    let object = {
-        result: true
-    };
 
     try {
+        eval(`let object = {
+            result: true
+        };
         let { result: currentResult } = object;
+        `);
 
-        result = currentResult;
+        result = true;
     } catch(error) {
         handleError(new Error(destructringAssignmentNotSupported));
     }
@@ -73,7 +74,8 @@ function arrowFunctions() {return new Promise((resolve, reject) => {
     let result = false;
 
     try {
-        result = (() => true)();
+        eval(`(() => true)()`);
+        result = true;
     } catch(error) {
         handleError(new Error(destructringAssignmentNotSupported));
     }
