@@ -6,25 +6,27 @@ import {
 } from './types';
 import {
     dependencies as dependencyUrls,
-    botDependencies
+    legacyDependencies
 } from './config';
-import isBot from './is-bot';
+import isLegacy from './is-legacy';
 
 const { parse } = JSON;
 
 export default async function() {
-    await loadBotDependencies();
+    await loadLegacyDependencies();
     await loadDependencies();
 }
 
-async function loadBotDependencies() {
-    const urlsGroups = isBot() && botDependencies || [];
+async function loadLegacyDependencies() {
+    const legacy = await isLegacy();
+    const urlsGroups = legacy && legacyDependencies || [];
 
     await Promise.all(urlsGroups.map(urls => Promise.all(urls.map(url => loadDependency(url).catch(handleError)))));
 }
 
 async function loadDependencies() {
-    const urls = ([isBot() && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs] as string [])
+    const legacy = await isLegacy();
+    const urls = ([legacy && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs] as string [])
         .concat(dependencyUrls)
         .filter(url => url);
     const dependencies = await Promise.all(urls.map(loadDependency));

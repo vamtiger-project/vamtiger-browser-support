@@ -1,6 +1,6 @@
 import { MetaElementAttribute, StringObject, SupportType } from './types';
 export declare const dependencies: string[];
-export declare const botDependencies: string[][];
+export declare const legacyDependencies: string[][];
 export declare const primarySupport: Set<string>;
 export declare const supportScript: StringObject;
 export declare const loadSupport: {

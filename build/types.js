@@ -78,6 +78,10 @@ var ErrorMessage;
     ErrorMessage["notBrowser"] = "This is not a web browser";
     ErrorMessage["noFormForSelector"] = "No Form for Selector";
     ErrorMessage["noFieldInFormForSelector"] = "No Field in Form for Selector";
+    ErrorMessage["objectAssignNotSupported"] = "Object.assign is not supported";
+    ErrorMessage["arrayFromNotSupported"] = "Array.from is not supported";
+    ErrorMessage["destructringAssignmentNotSupported"] = "Destructuring Assignment is not supported";
+    ErrorMessage["arrowFunctionsNotSupported"] = "Arrow functions are not supported";
 })(ErrorMessage = exports.ErrorMessage || (exports.ErrorMessage = {}));
 var NpmScript;
 (function (NpmScript) {

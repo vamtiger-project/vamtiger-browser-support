@@ -66,7 +66,11 @@ export declare enum ScriptUrl {
 export declare enum ErrorMessage {
     notBrowser = "This is not a web browser",
     noFormForSelector = "No Form for Selector",
-    noFieldInFormForSelector = "No Field in Form for Selector"
+    noFieldInFormForSelector = "No Field in Form for Selector",
+    objectAssignNotSupported = "Object.assign is not supported",
+    arrayFromNotSupported = "Array.from is not supported",
+    destructringAssignmentNotSupported = "Destructuring Assignment is not supported",
+    arrowFunctionsNotSupported = "Arrow functions are not supported"
 }
 export declare enum NpmScript {
     bundleSource = "bundle-source"

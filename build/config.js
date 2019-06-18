@@ -5,7 +5,7 @@ var vamtiger = types_1.StringConstant.vamtiger, jsExtension = types_1.StringCons
 var leadingData = types_1.regex.leadingData;
 var supportKeys = Object.keys(types_1.MetaElementBrowserSupportAttribute);
 exports.dependencies = [];
-exports.botDependencies = [
+exports.legacyDependencies = [
     [
         'https://cdn.jsdelivr.net/npm/es5-shim@latest/es5-shim.min.js',
         'https://cdn.jsdelivr.net/npm/es6-shim@latest/es6-shim.min.js',

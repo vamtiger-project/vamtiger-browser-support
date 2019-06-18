@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var types_1 = require("./types");
 var config_1 = require("./config");
-var is_bot_1 = require("./is-bot");
+var is_legacy_1 = require("./is-legacy");
 var parse = JSON.parse;
 function default_1() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadBotDependencies()];
+                case 0: return [4 /*yield*/, loadLegacyDependencies()];
                 case 1:
                     _a.sent();
                     return [4 /*yield*/, loadDependencies()];
@@ -20,15 +20,17 @@ function default_1() {
     });
 }
 exports.default = default_1;
-function loadBotDependencies() {
+function loadLegacyDependencies() {
     return __awaiter(this, void 0, void 0, function () {
-        var urlsGroups;
+        var legacy, urlsGroups;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    urlsGroups = is_bot_1.default() && config_1.botDependencies || [];
-                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(function (url) { return loadDependency(url).catch(handleError); })); }))];
+                case 0: return [4 /*yield*/, is_legacy_1.default()];
                 case 1:
+                    legacy = _a.sent();
+                    urlsGroups = legacy && config_1.legacyDependencies || [];
+                    return [4 /*yield*/, Promise.all(urlsGroups.map(function (urls) { return Promise.all(urls.map(function (url) { return loadDependency(url).catch(handleError); })); }))];
+                case 2:
                     _a.sent();
                     return [2 /*return*/];
             }
@@ -37,18 +39,20 @@ function loadBotDependencies() {
 }
 function loadDependencies() {
     return __awaiter(this, void 0, void 0, function () {
-        var urls, dependencies;
+        var legacy, urls, dependencies;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    urls = [is_bot_1.default() && types_1.ScriptUrl.vamtigerBrowserMethod || types_1.ScriptUrl.vamtigerBrowserMethodJsonJs]
+                case 0: return [4 /*yield*/, is_legacy_1.default()];
+                case 1:
+                    legacy = _a.sent();
+                    urls = [legacy && types_1.ScriptUrl.vamtigerBrowserMethod || types_1.ScriptUrl.vamtigerBrowserMethodJsonJs]
                         .concat(config_1.dependencies)
                         .filter(function (url) { return url; });
                     return [4 /*yield*/, Promise.all(urls.map(loadDependency))];
-                case 1:
+                case 2:
                     dependencies = _a.sent();
                     return [4 /*yield*/, loadVamtigerBrowserMethod()];
-                case 2:
+                case 3:
                     _a.sent();
                     return [2 /*return*/, dependencies];
             }
