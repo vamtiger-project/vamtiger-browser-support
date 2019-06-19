@@ -87,7 +87,8 @@ export declare enum VamtigerFormDataSupportFormFieldValue {
     innerHTML = "innerHTML"
 }
 export declare enum DocumentDataAttribute {
-    touchSupport = "vamtigerTouchSupport"
+    touchSupport = "vamtigerTouchSupport",
+    isBot = "vamtigerIsBot"
 }
 export declare enum SupportFile {
     elementQuery = "vamtiger-element-query-support"

@@ -103,7 +103,8 @@ export enum VamtigerFormDataSupportFormFieldValue {
 }
 
 export enum DocumentDataAttribute {
-    touchSupport = 'vamtigerTouchSupport'
+    touchSupport = 'vamtigerTouchSupport',
+    isBot = 'vamtigerIsBot'
 }
 
 export enum SupportFile {
