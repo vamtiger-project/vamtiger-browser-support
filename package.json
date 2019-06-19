@@ -17,7 +17,7 @@
         "install-source": "npm i --save-dev vamtiger-browser-method@source",
         "mocha": "npm run bundle-node-test && npm run bundle-browser-test && mocha build/test/node --recursive",
         "publish-preview": "git add -A; git commit -m test -a; git push -u origin gh-pages",
-        "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer 8888",
+        "serve": "npm run test && cd build && python -m SimpleHTTPServer 8888",
         "test": "npm run build && npm run mocha && npm run bundle-source",
         "watch": "vamtiger-watch --folder source --extension ts --script test"
     },
