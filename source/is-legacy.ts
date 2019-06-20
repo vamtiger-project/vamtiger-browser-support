@@ -33,6 +33,7 @@ function objectAssign() {return new Promise((resolve, reject) => {
 
     try {
         eval(`Object.assign({result: false}, {result: true}).result`);
+        result = true;
     } catch(error) {
         handleError(new Error(objectAssignNotSupported));
     }
@@ -45,6 +46,7 @@ function arrayFrom() {return new Promise((resolve, reject) => {
 
     try {
         eval(`Array.from('1234').length === 4`);
+        result = true;
     } catch(error) {
         handleError(new Error(arrayFromNotSupported));
     }

@@ -38,6 +38,7 @@ function objectAssign() {
         var result = false;
         try {
             eval("Object.assign({result: false}, {result: true}).result");
+            result = true;
         }
         catch (error) {
             handleError(new Error(objectAssignNotSupported));
@@ -50,6 +51,7 @@ function arrayFrom() {
         var result = false;
         try {
             eval("Array.from('1234').length === 4");
+            result = true;
         }
         catch (error) {
             handleError(new Error(arrayFromNotSupported));
