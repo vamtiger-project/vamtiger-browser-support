@@ -199,7 +199,7 @@ export const regex = {
     trailingSupport: /(.*?Support)(Primary)?$/,
     supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
     distTag: /(\d|latest)$/,
-    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
+    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|googlebot|google-structured-data-testing-tool|bingbot|linkedinbot|mediapartners-google/i
 }
 
 export const stringConstant = {

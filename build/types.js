@@ -120,7 +120,7 @@ exports.regex = {
     trailingSupport: /(.*?Support)(Primary)?$/,
     supportScript: /vamtiger(-\w+)+-(support|polyfill)/,
     distTag: /(\d|latest)$/,
-    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i
+    bot: /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|googlebot|google-structured-data-testing-tool|bingbot|linkedinbot|mediapartners-google/i
 };
 exports.stringConstant = __assign({}, StringConstant, { 365080655670: 365080655670 });
 exports.selector = {
