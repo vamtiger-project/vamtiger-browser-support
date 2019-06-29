@@ -19,13 +19,13 @@ export default async function () {
             destructringAssignment(),
             arrowFunctions()
         ])
-        .then(results => results.some(result => !result))
+        .then(results => !results.every(result => result))
         :
         legacy;
 
     legacy = isLegacy ? true : false;
 
-    return isLegacy;
+    return legacy;
 }
 
 function objectAssign() {return new Promise((resolve, reject) => {

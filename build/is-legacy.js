@@ -17,7 +17,7 @@ function default_1() {
                             destructringAssignment(),
                             arrowFunctions()
                         ])
-                            .then(function (results) { return results.some(function (result) { return !result; }); })];
+                            .then(function (results) { return !results.every(function (result) { return result; }); })];
                 case 1:
                     _a = _b.sent();
                     return [3 /*break*/, 3];
@@ -27,7 +27,7 @@ function default_1() {
                 case 3:
                     isLegacy = _a;
                     legacy = isLegacy ? true : false;
-                    return [2 /*return*/, isLegacy];
+                    return [2 /*return*/, legacy];
             }
         });
     });
