@@ -28,7 +28,7 @@ function default_1() {
                             value: touchSupport
                         },
                         {
-                            key: types_1.DocumentDataAttribute.isBot,
+                            key: types_1.DocumentDataAttribute.bot,
                             value: bot
                         },
                         {

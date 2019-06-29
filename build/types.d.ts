@@ -88,7 +88,7 @@ export declare enum VamtigerFormDataSupportFormFieldValue {
 }
 export declare enum DocumentDataAttribute {
     touchSupport = "vamtigerTouchSupport",
-    isBot = "vamtigerIsBot",
+    bot = "vamtigerBot",
     legacy = "vamtigerLegacy",
     textMode = "vamtigerTextMode"
 }

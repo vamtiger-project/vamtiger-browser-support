@@ -104,7 +104,7 @@ var VamtigerFormDataSupportFormFieldValue;
 var DocumentDataAttribute;
 (function (DocumentDataAttribute) {
     DocumentDataAttribute["touchSupport"] = "vamtigerTouchSupport";
-    DocumentDataAttribute["isBot"] = "vamtigerIsBot";
+    DocumentDataAttribute["bot"] = "vamtigerBot";
     DocumentDataAttribute["legacy"] = "vamtigerLegacy";
     DocumentDataAttribute["textMode"] = "vamtigerTextMode";
 })(DocumentDataAttribute = exports.DocumentDataAttribute || (exports.DocumentDataAttribute = {}));

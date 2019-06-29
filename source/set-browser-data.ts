@@ -24,7 +24,7 @@ export default async function () {
             value: touchSupport
         },
         {
-            key: DocumentDataAttribute.isBot,
+            key: DocumentDataAttribute.bot,
             value: bot
         },
         {
