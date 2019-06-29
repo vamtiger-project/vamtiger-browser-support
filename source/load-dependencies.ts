@@ -72,7 +72,7 @@ function loadVamtigerBrowserMethod() {return new Promise(async (resolve, reject)
         head.appendChild(vamtigerBrowserMethodScript);
     }
 
-    resolve();
+    addEventListener('vamtigerBrowserMethodReady', resolve);
 })}
 
 function handleError(error: Error) {

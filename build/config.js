@@ -8,8 +8,10 @@ exports.dependencies = [];
 exports.legacyDependencies = [
     [
         'https://cdn.jsdelivr.net/npm/es5-shim@latest/es5-shim.min.js',
-        'https://cdn.jsdelivr.net/npm/es6-shim@latest/es6-shim.min.js',
         'https://cdn.jsdelivr.net/npm/es6-object-assign/dist/object-assign.min.js'
+    ],
+    [
+        'https://cdn.jsdelivr.net/npm/es6-shim@latest/es6-shim.min.js',
     ],
     [
         'https://cdn.jsdelivr.net/npm/babel-polyfill@latest/dist/polyfill.min.js',

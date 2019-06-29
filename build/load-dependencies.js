@@ -96,7 +96,7 @@ function loadVamtigerBrowserMethod() {
                 vamtigerBrowserMethodScript.innerHTML = js;
                 head.appendChild(vamtigerBrowserMethodScript);
             }
-            resolve();
+            addEventListener('vamtigerBrowserMethodReady', resolve);
             return [2 /*return*/];
         });
     }); });
