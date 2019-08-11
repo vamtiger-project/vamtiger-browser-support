@@ -29,14 +29,15 @@ async function loadDependencies() {
     const urls = ([legacy && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs] as string [])
         .concat(dependencyUrls)
         .filter(url => url);
-    const dependencies = await Promise.all(urls.map(loadDependency));
+    const dependencies = await loadDependency(ScriptUrl.tsLib)
+        .then(() => Promise.all(urls.map(loadDependency)));
 
     await loadVamtigerBrowserMethod();
 
     return dependencies;
 }
 
-function loadDependency(src: string) {return new Promise((resolve: (script?: HTMLScriptElement) => void, reject) => {
+export function loadDependency(src: string) {return new Promise((resolve: (script?: HTMLScriptElement) => void, reject) => {
     const { head } = document;
     const selector = `[src="${src}"]`;
     const existingScript = head.querySelector<HTMLScriptElement>(selector);
