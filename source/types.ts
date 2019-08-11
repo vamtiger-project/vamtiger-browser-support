@@ -2,6 +2,8 @@ import * as tslib from '../node_modules/tslib/tslib';
 import * as VamtigerBrowserMethodTypes from 'vamtiger-browser-method/build/types';
 import * as AWS from 'aws-sdk';
 
+tslib;
+
 export enum StringConstant {
     nothing = '',
     build = 'build',
