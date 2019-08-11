@@ -2,8 +2,6 @@ import * as tslib from '../node_modules/tslib/tslib';
 import * as VamtigerBrowserMethodTypes from 'vamtiger-browser-method/build/types';
 import * as AWS from 'aws-sdk';
 
-tslib;
-
 export enum StringConstant {
     nothing = '',
     build = 'build',
@@ -135,6 +133,14 @@ export type VamtigerSupportFile = 'vamtiger-es2015-support';
 
 export type VamtigerFormDataSupportFormFieldValueKey = keyof typeof VamtigerFormDataSupportFormFieldValue;
 
+export type TsLibType = typeof tslib;
+
+export type TsLibKey = keyof TsLibType;
+
+export type TsLib = {
+    [K in TsLibKey]: TsLibType[K]
+}
+
 export type VamtigerSupport =  {
     [K in VamtigerSupportFile]?: IUpdateBrowserSupport;
 }
@@ -188,7 +194,7 @@ export interface IVamtigerFormSupportFormField {
 }
 
 declare global {
-    interface Window extends VamtigerSupport {
+    interface Window extends VamtigerSupport, TsLib {
         [ElementId.vamtigerBrowserSupport]: HTMLMetaElement,
         VamtigerBrowserSupport: (params: IUpdateBrowserSupport) => void;
         VamtigerContact: (params: IVamtigerContactParams) => Promise<AWS.SNS.PublishResponse>;
@@ -215,4 +221,10 @@ export const stringConstant = {
 
 export const selector = {
     vamtigerBrowserMethod: `script[src="${ScriptUrl.vamtigerBrowserMethod}"]`
+}
+
+const tslibKeys = Object.keys(tslib) as TsLibKey[];
+
+if (tslibKeys.some(key => !self[key])) {
+    Object.assign(window, tslib);
 }
