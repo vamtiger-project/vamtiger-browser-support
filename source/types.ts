@@ -73,8 +73,8 @@ export enum Selector {
 }
 
 export enum ScriptUrl {
-    vamtigerBrowserMethod = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.17/build/vamtiger-browser-method.js',
-    vamtigerBrowserMethodJsonJs = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.17/build/vamtiger-browser-method.js.json.js',
+    vamtigerBrowserMethod = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.19/build/vamtiger-browser-method.js',
+    vamtigerBrowserMethodJsonJs = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.19/build/vamtiger-browser-method.js.json.js',
     tsLib = 'https://cdn.jsdelivr.net/npm/tslib@latest'
 }
 
