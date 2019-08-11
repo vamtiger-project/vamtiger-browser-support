@@ -222,9 +222,3 @@ export const stringConstant = {
 export const selector = {
     vamtigerBrowserMethod: `script[src="${ScriptUrl.vamtigerBrowserMethod}"]`
 }
-
-const tslibKeys = Object.keys(tslib) as TsLibKey[];
-
-if (tslibKeys.some(key => !self[key])) {
-    Object.assign(window, tslib);
-}
