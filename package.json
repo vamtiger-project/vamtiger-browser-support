@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.46.1",
+    "version": "0.46.1-0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -13,10 +13,11 @@
         "clean": "rm -rf build/*",
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger(-\\w+)+-(support|polyfill)).(js(.map)?|d.ts)\"",
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
-        "commit": "npm run bundle-source && npm run clean-bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish --publishSource",
+        "commit": "npm run bundle-source && npm run clean-bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish",
         "install-source": "npm i --save-dev vamtiger-browser-method@source",
         "mocha": "npm run bundle-node-test && npm run bundle-browser-test && mocha build/test/node --recursive",
-        "serve": "npm run test && npm run bundle-source && cd build && python -m SimpleHTTPServer 8888",
+        "publish-preview": "npm run test && cd build && git add -A; git commit -m test -a; git push -u origin gh-pages",
+        "serve": "npm run test && cd build && python -m SimpleHTTPServer 8888",
         "test": "npm run build && npm run mocha && npm run bundle-source",
         "watch": "vamtiger-watch --folder source --extension ts --script test"
     },
@@ -24,11 +25,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -55,8 +52,8 @@
         "vamtiger-browser-method": "^0.86.1",
         "vamtiger-bundle-typescript": "0.0.30",
         "vamtiger-copy-file": "latest",
-        "vamtiger-create-file": "latest",
-        "vamtiger-get-directory-content": "latest",
+        "vamtiger-create-file": "0.0.10",
+        "vamtiger-get-directory-content": "0.0.35",
         "vamtiger-get-file-text": "latest",
         "vamtiger-node-typescript-commit": "latest",
         "vamtiger-remove": "latest"
