@@ -7,6 +7,8 @@ import loadSupport from './load-support';
 import loadDependencies from './load-dependencies';
 import setBrowserData from './set-browser-data';
 
+loadTsLib();
+
 async function handleLoad(event: Event) {
     removeEventListener('load', handleLoad);
 
@@ -28,5 +30,4 @@ function handleError(error: Error) {
 
 const { notBrowser } = ErrorMessage;
 
-loadTsLib();
 addEventListener('load', handleLoad);
