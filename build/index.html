@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>VAMTIGER Browser Support</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha@latest/mocha.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/mocha@latest/mocha.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chai@latest/chai.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/babel-polyfill@latest/dist/polyfill.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@latest/babel.min.js"></script> -->
+        <script src="vamtiger-browser-support.js"
+            data-es2015-support-primary
+            data-element-query-support
+            data-web-component-support
+            data-fetch-support
+            data-contact-support
+            data-load="test/browser.js"
+        ></script>
+    </head>
+
+    <body id="mocha">
+        <header>
+            <h1>
+                VAMTIGER Browser Support
+            </h1>
+        </header>
+    </body>
+</html>

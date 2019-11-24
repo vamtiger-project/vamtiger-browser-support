@@ -1,0 +1,2 @@
+!function(){"use strict";const t=Object.assign||function(t){for(var n,r=1;r<arguments.length;r++)for(var e in n=arguments[r])Object.prototype.hasOwnProperty.call(n,e)&&(t[e]=n[e]);return t};window._VamtigerContact_||(window._VamtigerContact_=function(n){return Object.keys(n).reduce(function(r,e){var o;return t({},r,((o={})[e]=n[e].join(""),o))},{})})}();
+//# sourceMappingURL=vamtiger-contact-polyfill-support.js.map
