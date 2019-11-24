@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.46.11",
+    "version": "0.46.12-0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -14,6 +14,7 @@
         "clean-bundle": "vamtiger-remove -d build -p \"(vamtiger(-\\w+)+-(support|polyfill)).(js(.map)?|d.ts)\"",
         "clean-install": "rm -rf package-lock.json node_modules && npm i",
         "commit": "npm run bundle-source && npm run clean-bundle && vamtiger-node-typescript-commit --buildScript bundle --push --publish",
+        "copy-dependencies": "cp node_modules/vamtiger-browser-method/build/vamtiger-browser-method.js build",
         "install-source": "npm i --save-dev vamtiger-browser-method@source",
         "mocha": "npm run bundle-node-test && npm run bundle-browser-test && mocha build/test/node --recursive",
         "publish-preview": "npm run test && cd build && git add -A; git commit -m test -a; git push -u origin gh-pages",
@@ -25,11 +26,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -51,15 +48,17 @@
         "beautify": "0.0.8",
         "chai": "^4.2.0",
         "mocha": "^5.2.0",
+        "rollup-plugin-babel": "^4.3.3",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
-        "vamtiger-browser-method": "^0.86.1",
+        "vamtiger-browser-method": "^0.107.23",
         "vamtiger-bundle-typescript": "0.0.30",
         "vamtiger-copy-file": "latest",
         "vamtiger-create-file": "0.0.10",
         "vamtiger-get-directory-content": "0.0.35",
         "vamtiger-get-file-text": "latest",
         "vamtiger-node-typescript-commit": "latest",
+        "vamtiger-postinstall": "^0.19.1",
         "vamtiger-remove": "latest"
     }
 }
