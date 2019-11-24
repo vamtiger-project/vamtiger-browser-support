@@ -1,14 +1,16 @@
-import { resolve as resolvePath, parse, dirname } from 'path';
+import { resolve as resolvePath, parse, dirname, basename } from 'path';
 import { expect } from 'chai';
 import getFolderContent from 'vamtiger-get-directory-content';
 import createFile from 'vamtiger-create-file';
 import { regex, StringConstant, NpmScript, AnyObject, StringObject } from '../types'
-import { jsonFormatConfig } from '../config';
+import { jsonFormatConfig, nodeDependencies as dependencies } from '../config';
 
+const { cwd } = process;
+const workingDirectory = cwd();
 const format = require('beautify');
 const { supportScript } = regex;
-const { jsExtension, bashAnd } = StringConstant;
-const { bundleSource } = NpmScript;
+const { jsExtension, bashAnd, nothing, space } = StringConstant;
+const { bundleSource, copyDependencies } = NpmScript;
 const sourceFolder = resolvePath(
     __dirname,
     '../../source'
@@ -24,6 +26,7 @@ let formattedPackageJson: string;
 let sourceFiles: string[];
 let supportScripts: string[];
 let bundleSourceScript: string;
+let copyDependenciesScript: string;
 
 describe('Generate Browser', function () {
     before(async function () {
@@ -45,10 +48,10 @@ describe('Generate Browser', function () {
         );
     });
 
-    it('Support Scripts', test)
+    it('Support Scripts', supportScriptsTest);
 });
 
-async function test() {
+async function supportScriptsTest() {
     expect(packageJson.scripts[bundleSource]).to.equal(bundleSourceScript);
 
     await createFile(packageJsonPath, formattedPackageJson);

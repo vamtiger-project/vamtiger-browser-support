@@ -25,11 +25,8 @@ async function loadLegacyDependencies() {
 }
 
 async function loadDependencies() {
-    const legacy = await isLegacy();
-    const urls = ([legacy && ScriptUrl.vamtigerBrowserMethod || ScriptUrl.vamtigerBrowserMethodJsonJs] as string [])
-        .concat(dependencyUrls)
-        .filter(url => url);
-    const dependencies = await Promise.all(urls.map(loadDependency));
+    const dependencies = await loadDependency(ScriptUrl.vamtigerBrowserMethod)
+        .catch(() => loadDependency(ScriptUrl.vamtigerBrowserMethodJsonJs));
 
     await loadVamtigerBrowserMethod();
 
@@ -43,8 +40,12 @@ function loadDependency(src: string) {return new Promise((resolve: (script?: HTM
     const script = !existingScript && document.createElement('script');
 
     if (script) {
-        script.addEventListener('load', event => resolve(script));
-        script.addEventListener('error', reject);
+        script.addEventListener('load', () => resolve(script));
+        script.addEventListener('error', error => {
+            head.removeChild(script);
+
+            reject(error);
+        });
 
         script.src = src;
 

@@ -32,6 +32,10 @@ export const legacyDependencies = [
     ]
 ];
 
+export const nodeDependencies = [
+    'vamtiger-browser-method'
+]
+
 export const primarySupport = new Set<string>([
     'botSupport',
     'es2015Support'

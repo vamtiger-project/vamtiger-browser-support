@@ -16,6 +16,7 @@ export enum StringConstant {
     aws = 'aws',
     colon = ':',
     hyphen = '-',
+    space = ' ',
     'vamtiger-contact' = 'vamtiger-contact',
     '5e5164d3' = '5e5164d3',
     cc71 = 'cc71',
@@ -73,8 +74,8 @@ export enum Selector {
 }
 
 export enum ScriptUrl {
-    vamtigerBrowserMethod = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.19/build/vamtiger-browser-method.js',
-    vamtigerBrowserMethodJsonJs = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.19/build/vamtiger-browser-method.js.json.js',
+    vamtigerBrowserMethod = 'vamtiger-browser-method.js',
+    vamtigerBrowserMethodJsonJs = 'https://cdn.jsdelivr.net/npm/vamtiger-browser-method@0.107.24/build/vamtiger-browser-method.js.json.js',
     tsLib = 'https://cdn.jsdelivr.net/npm/tslib@latest'
 }
 
@@ -89,7 +90,8 @@ export enum ErrorMessage {
 }
 
 export enum NpmScript {
-    bundleSource = 'bundle-source'
+    bundleSource = 'bundle-source',
+    copyDependencies = 'copy-dependencies'
 }
 
 export enum SupportType {
