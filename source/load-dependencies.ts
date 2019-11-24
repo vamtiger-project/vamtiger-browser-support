@@ -1,11 +1,10 @@
 import { IJsonScriptData } from 'vamtiger-browser-method/build/types';
 import {
     Selector,
-    selector,
-    ScriptUrl
+    ScriptUrl,
+    StringConstant
 } from './types';
 import {
-    dependencies as dependencyUrls,
     legacyDependencies
 } from './config';
 import isLegacy from './is-legacy';
@@ -33,8 +32,15 @@ async function loadDependencies() {
     return dependencies;
 }
 
-function loadDependency(src: string) {return new Promise((resolve: (script?: HTMLScriptElement) => void, reject) => {
+function loadDependency(currentSrc: string) {return new Promise((resolve: (script?: HTMLScriptElement) => void, reject) => {
     const { head } = document;
+    const vamtigerBrowserSupportScript = head.querySelector<HTMLScriptElement>(Selector.vamtigerBrowserSupportScript);
+    const vamtigerBrowserSupportScriptPaths = vamtigerBrowserSupportScript && vamtigerBrowserSupportScript.src
+        .split(StringConstant.slash);
+    const vamtigerBrowserSupportScriptParentPath = vamtigerBrowserSupportScriptPaths
+        .slice(0, vamtigerBrowserSupportScriptPaths.length - 1)
+        .join(StringConstant.slash);
+    const src = currentSrc === ScriptUrl.vamtigerBrowserMethodJsonJs && `${vamtigerBrowserSupportScriptParentPath}/${currentSrc}` || currentSrc;
     const selector = `[src="${src}"]`;
     const existingScript = head.querySelector<HTMLScriptElement>(selector);
     const script = !existingScript && document.createElement('script');
