@@ -55,7 +55,7 @@
         "rollup-plugin-babel": "^4.3.3",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
-        "vamtiger-browser-method": "^0.107.27",
+        "vamtiger-browser-method": "^0.107.28",
         "vamtiger-bundle-typescript": "0.0.30",
         "vamtiger-copy-file": "latest",
         "vamtiger-create-file": "0.0.10",
