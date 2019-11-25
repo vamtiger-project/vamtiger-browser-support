@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-browser-support",
-    "version": "0.46.15",
+    "version": "0.46.16-0",
     "description": "Check and optionally add browser support for defined features",
     "main": "build/vamtiger-browser-support",
     "scripts": {
@@ -26,11 +26,7 @@
         "type": "git",
         "url": "git+https://github.com/vamtiger-project/vamtiger-browser-support.git"
     },
-    "keywords": [
-        "vamtiger",
-        "browser",
-        "support"
-    ],
+    "keywords": ["vamtiger", "browser", "support"],
     "author": "Vamtiger Immortalles",
     "license": "MIT",
     "bugs": {
@@ -55,7 +51,7 @@
         "rollup-plugin-babel": "^4.3.3",
         "stringify-object": "^3.3.0",
         "typescript": "^3.2.2",
-        "vamtiger-browser-method": "^0.107.27",
+        "vamtiger-browser-method": "^0.107.28",
         "vamtiger-bundle-typescript": "0.0.30",
         "vamtiger-copy-file": "latest",
         "vamtiger-create-file": "0.0.10",
